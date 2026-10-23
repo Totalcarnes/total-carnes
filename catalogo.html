@@ -1284,7 +1284,7 @@ function adicionarAoCarrinho(nome, preco = 0, unidade = 'kg') {
 }
 
 function atualizarCarrinho() {
-    const lista = document.getElementById('listaCarrinho');
+    const lista = document.getElementById('itens-carrinho');
     const contador = document.getElementById('contadorCarrinho');
 
     lista.innerHTML = '';
@@ -1344,67 +1344,90 @@ function alterarQuantidade(indice, alteracao) {
 
 function abrirCarrinho() {
     document.getElementById('carrinho').classList.add('aberto');
-    document.getElementById('fundoCarrinho').classList.add('aberto');
     document.body.classList.add('carrinho-aberto');
 }
 
 function fecharCarrinho() {
     document.getElementById('carrinho').classList.remove('aberto');
-    document.getElementById('fundoCarrinho').classList.remove('aberto');
     document.body.classList.remove('carrinho-aberto');
 }
 
-function enviarPedidoWhatsApp() {
+    function selecionarEntrega(tipo) {
+    document.getElementById('tipo-entrega').value = tipo;
+
+    document.getElementById('btn-uber').classList.toggle(
+        'ativo', tipo === 'Entrega por Uber'
+    );
+
+    document.getElementById('btn-retirada').classList.toggle(
+        'ativo', tipo === 'Retirada na loja'
+    );
+
+    const campoEndereco = document.getElementById('campo-endereco');
+    campoEndereco.style.display =
+        tipo === 'Entrega por Uber' ? 'block' : 'none';
+
+    if (tipo !== 'Entrega por Uber') {
+        document.getElementById('endereco-cliente').value = '';
+    }
+}
+
+function finalizarWhatsApp() {
+    const nome = document.getElementById('nome-cliente').value.trim();
+    const telefone = document.getElementById('telefone-cliente').value.trim();
+    const entrega = document.getElementById('tipo-entrega').value;
+    const endereco = document.getElementById('endereco-cliente').value.trim();
+    const observacoes = document.getElementById('observacoes').value.trim();
+
     if (carrinho.length === 0) {
-        alert('Adicione pelo menos um produto à encomenda.');
+        alert('Adicione pelo menos um produto à sua encomenda.');
         return;
     }
-
-    const nome = document.getElementById('nomeCliente').value.trim();
-    const telefone = document.getElementById('telefoneCliente').value.trim();
-    const entrega = document.getElementById('tipoEntrega').value;
-    const endereco = document.getElementById('enderecoCliente').value.trim();
-    const observacoes = document.getElementById('observacoesPedido').value.trim();
 
     if (!nome || !telefone) {
-        alert('Por favor, preencha seu nome e telefone.');
+        alert('Preencha seu nome e telefone.');
         return;
     }
 
-    if (entrega.startsWith('Entrega') && !endereco) {
+    if (!entrega) {
+        alert('Escolha entrega por Uber ou retirada na loja.');
+        return;
+    }
+
+    if (entrega === 'Entrega por Uber' && !endereco) {
         alert('Informe o endereço para entrega.');
         return;
     }
 
-    let mensagem = 'Olá! Quero fazer uma encomenda na Total Carnes.%0A%0A';
-    mensagem += '*DADOS DO CLIENTE*%0A';
-    mensagem += 'Nome: ' + encodeURIComponent(nome) + '%0A';
-    mensagem += 'Telefone: ' + encodeURIComponent(telefone) + '%0A';
-    mensagem += 'Recebimento: ' + encodeURIComponent(entrega) + '%0A';
+    const itens = carrinho.map(item =>
+        `- ${item.nome}: ${item.quantidade} ${item.unidade}`
+    ).join('\n');
 
-    if (endereco) {
-        mensagem += 'Endereço: ' + encodeURIComponent(endereco) + '%0A';
+    let mensagem =
+        `*NOVA ENCOMENDA - TOTAL CARNES*\n\n` +
+        `Nome: ${nome}\n` +
+        `Telefone: ${telefone}\n` +
+        `Recebimento: ${entrega}\n`;
+
+    if (entrega === 'Entrega por Uber') {
+        mensagem += `Endereço: ${endereco}\n`;
+        mensagem += `Taxa do Uber por conta do cliente.\n`;
     }
 
-    mensagem += '%0A*PRODUTOS*%0A';
-
-    carrinho.forEach(item => {
-        mensagem += '• ' + encodeURIComponent(item.nome) +
-            ' — ' + item.quantidade + ' ' + encodeURIComponent(item.unidade) +
-            ' (peso/valor a confirmar)%0A';
-    });
+    mensagem += `\n*Produtos:*\n${itens}\n`;
 
     if (observacoes) {
-        mensagem += '%0AObservações: ' + encodeURIComponent(observacoes);
+        mensagem += `\nObservações: ${observacoes}\n`;
     }
 
-    mensagem += '%0A%0APagamento: Pix.';
+    mensagem +=
+        '\nOs valores e pesos finais serão confirmados pela loja.';
 
-    const numeroLoja = '5511953000827';
-    window.open(
-        'https://wa.me/' + numeroLoja + '?text=' + mensagem,
-        '_blank'
-    );
+    const url =
+        'https://wa.me/5511953000827?text=' +
+        encodeURIComponent(mensagem);
+
+    window.open(url, '_blank');
 }
 
 document.addEventListener('keydown', function(event) {
