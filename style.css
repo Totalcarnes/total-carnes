@@ -662,8 +662,9 @@ header {
    ========================================================= */
 
 .carrinho {
+   display: none;
     position: fixed;
-
+   
     right: 14px;
     top: 92px;
 
