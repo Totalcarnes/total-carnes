@@ -438,3 +438,220 @@
                 <input
                     type="text"
                     id="endereco-cliente"
+                    placeholder="Digite seu endereço completo"
+                >
+
+
+                <small>
+                    🛵 A taxa do Uber é por conta do cliente.
+                </small>
+
+            </div>
+
+
+            <!-- FORMA DE PAGAMENTO -->
+
+            <div class="checkout-titulo">
+
+                💳 <strong>
+                    Forma de pagamento
+                </strong>
+
+            </div>
+
+
+            <div class="pix-opcao">
+
+                <span class="pix-icone">
+                    💠
+                </span>
+
+                <span>
+
+                    <strong>
+                        PIX
+                    </strong>
+
+                    <small>
+                        Pagamento via Pix
+                    </small>
+
+                </span>
+
+                <span class="pix-selecionado">
+                    ●
+                </span>
+
+            </div>
+
+
+            <select
+                id="pagamento"
+                style="display:none;"
+            >
+
+                <option value="Pix">
+                    Pix
+                </option>
+
+            </select>
+
+
+            <!-- OBSERVAÇÕES -->
+
+            <div class="checkout-titulo observacao-titulo">
+
+                📝 <strong>
+                    Observações
+                </strong>
+
+                <span>
+                    (opcional)
+                </span>
+
+            </div>
+
+
+            <textarea
+                id="observacoes"
+                maxlength="150"
+                placeholder="Alguma observação sobre o pedido?"
+            ></textarea>
+
+        </div>
+
+    </div>
+
+
+
+<a
+        href="https://wa.me/5511953000827"
+        class="whatsapp-flutuante"
+        target="_blank"
+        aria-label="Fazer pedido pelo WhatsApp"
+    >
+
+        <span>
+            💬
+        </span>
+
+        <strong>
+            Faça seu pedido
+        </strong>
+
+    </a>
+
+<script>
+// Carrinho do catálogo Total Carnes
+const itensCarrinho = [];
+let tipoEntregaSelecionado = '';
+
+function abrirCarrinho() {
+  const carrinho = document.getElementById('carrinho');
+  if (carrinho) {
+    carrinho.classList.add('ativo');
+    carrinho.style.display = 'block';
+    carrinho.setAttribute('aria-hidden', 'false');
+  }
+  atualizarCarrinho();
+}
+
+function fecharCarrinho() {
+  const carrinho = document.getElementById('carrinho');
+  if (carrinho) {
+    carrinho.classList.remove('ativo');
+    carrinho.style.display = '';
+    carrinho.setAttribute('aria-hidden', 'true');
+  }
+}
+
+function adicionarAoCarrinho(nome, preco = 0, unidade = 'un') {
+  const existente = itensCarrinho.find(item => item.nome === nome && item.unidade === unidade);
+  if (existente) existente.quantidade += 1;
+  else itensCarrinho.push({ nome, preco: Number(preco) || 0, unidade, quantidade: 1 });
+  atualizarCarrinho();
+  abrirCarrinho();
+}
+
+function adicionarComSabor(nome, preco = 0, unidade = 'un', idSelect) {
+  const select = document.getElementById(idSelect);
+  const sabor = select ? select.value : '';
+  const nomeCompleto = sabor ? `${nome} — ${sabor}` : nome;
+  const existente = itensCarrinho.find(item => item.nome === nomeCompleto && item.unidade === unidade);
+  if (existente) existente.quantidade += 1;
+  else itensCarrinho.push({ nome: nomeCompleto, preco: Number(preco) || 0, unidade, quantidade: 1 });
+  atualizarCarrinho();
+  abrirCarrinho();
+}
+
+function alterarQuantidade(indice, delta) {
+  if (!itensCarrinho[indice]) return;
+  itensCarrinho[indice].quantidade += delta;
+  if (itensCarrinho[indice].quantidade <= 0) itensCarrinho.splice(indice, 1);
+  atualizarCarrinho();
+}
+
+function atualizarCarrinho() {
+  const area = document.getElementById('itens-carrinho');
+  if (!area) return;
+  if (!itensCarrinho.length) {
+    area.innerHTML = '<p>Seu carrinho está vazio.</p>';
+    return;
+  }
+  area.innerHTML = itensCarrinho.map((item, i) => `
+    <div class="item-carrinho" style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin:10px 0;padding:10px;border-bottom:1px solid #555;">
+      <div><strong>${escaparHTML(item.nome)}</strong><br><small>${item.unidade === 'kg' ? 'Por kg — quantidade a confirmar' : 'Unidade'} </small></div>
+      <div style="display:flex;align-items:center;gap:8px;white-space:nowrap;">
+        <button type="button" aria-label="Diminuir quantidade" onclick="alterarQuantidade(${i},-1)">−</button>
+        <strong>${item.quantidade}</strong>
+        <button type="button" aria-label="Aumentar quantidade" onclick="alterarQuantidade(${i},1)">+</button>
+      </div>
+    </div>`).join('');
+}
+
+function escaparHTML(texto) {
+  return String(texto).replace(/[&<>"']/g, caractere => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[caractere]));
+}
+
+function selecionarEntrega(tipo) {
+  tipoEntregaSelecionado = tipo;
+  const select = document.getElementById('tipo-entrega');
+  if (select) select.value = tipo;
+  const uber = document.getElementById('btn-uber');
+  const retirada = document.getElementById('btn-retirada');
+  if (uber) uber.classList.toggle('selecionado', tipo === 'Entrega por Uber');
+  if (retirada) retirada.classList.toggle('selecionado', tipo === 'Retirada na loja');
+  const campo = document.getElementById('campo-endereco');
+  if (campo) campo.style.display = tipo === 'Entrega por Uber' ? 'block' : 'none';
+}
+
+function finalizarWhatsApp() {
+  if (!itensCarrinho.length) {
+    alert('Adicione pelo menos um produto à encomenda antes de enviar.');
+    return;
+  }
+  const nome = (document.getElementById('nome-cliente')?.value || '').trim();
+  const telefone = (document.getElementById('telefone-cliente')?.value || '').trim();
+  const endereco = (document.getElementById('endereco-cliente')?.value || '').trim();
+  const observacoes = (document.getElementById('observacoes')?.value || '').trim();
+  const entrega = tipoEntregaSelecionado || document.getElementById('tipo-entrega')?.value || '';
+  if (!nome) { alert('Por favor, informe seu nome.'); document.getElementById('nome-cliente')?.focus(); return; }
+  if (!telefone) { alert('Por favor, informe seu telefone.'); document.getElementById('telefone-cliente')?.focus(); return; }
+  if (!entrega) { alert('Escolha entre entrega por Uber ou retirada na loja.'); return; }
+  if (entrega === 'Entrega por Uber' && !endereco) { alert('Informe o endereço para a entrega por Uber.'); document.getElementById('endereco-cliente')?.focus(); return; }
+  const lista = itensCarrinho.map(item => `• ${item.nome} — ${item.quantidade} ${item.unidade === 'kg' ? 'pedido(s) por kg (peso a confirmar)' : 'unidade(s)'}`).join('\n');
+  const mensagem = `Olá! Quero fazer uma encomenda na Total Carnes.\n\nNome: ${nome}\nTelefone: ${telefone}\nRecebimento: ${entrega}${entrega === 'Entrega por Uber' ? `\nEndereço: ${endereco}\n(Taxa do Uber por conta do cliente)` : ''}\n\nProdutos:\n${lista}${observacoes ? `\n\nObservações: ${observacoes}` : ''}\n\nPagamento: Pix.`;
+  window.open(`https://wa.me/5511953000827?text=${encodeURIComponent(mensagem)}`, '_blank', 'noopener');
+}
+
+// Mantém o painel fechado ao carregar e permite abrir pelo botão PEDIDO.
+document.addEventListener('DOMContentLoaded', () => {
+  const carrinho = document.getElementById('carrinho');
+  if (carrinho) carrinho.setAttribute('aria-hidden', 'true');
+  const campo = document.getElementById('campo-endereco');
+  if (campo) campo.style.display = 'none';
+  atualizarCarrinho();
+});
+</script>
+</body>
+</html>
