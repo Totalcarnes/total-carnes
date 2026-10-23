@@ -979,55 +979,77 @@
     <span id="contadorCarrinho">0</span>
 </button>
 
-<!-- PAINEL DO CARRINHO -->
-
-<div class="fundo-carrinho" id="fundoCarrinho" onclick="fecharCarrinho()"></div>
-
-<aside class="carrinho" id="carrinho">
-
+    <!-- PAINEL DO CARRINHO -->
+<div id="carrinho" class="carrinho">
     <div class="carrinho-topo">
-        <h2>🛒 Sua Encomenda</h2>
-        <button type="button" class="fechar-carrinho" onclick="fecharCarrinho()">×</button>
+        <strong>🛒 Sua Encomenda</strong>
+        <button type="button" onclick="fecharCarrinho()">×</button>
     </div>
 
-    <div id="listaCarrinho" class="lista-carrinho">
-        <p class="carrinho-vazio">Sua encomenda está vazia.</p>
+    <div id="itens-carrinho" class="itens-carrinho">
+        <p>Seu carrinho está vazio.</p>
     </div>
 
-    <div class="dados-cliente">
-        <h3>Dados do pedido</h3>
+    <div id="dados-pedido" class="dados-pedido">
+        <div class="checkout-titulo">👤 <strong>Seus dados</strong></div>
 
-        <label for="nomeCliente">Nome completo</label>
-        <input type="text" id="nomeCliente" placeholder="Seu nome">
+        <input type="text" id="nome-cliente" placeholder="Seu nome">
+        <input type="tel" id="telefone-cliente" placeholder="Seu telefone">
 
-        <label for="telefoneCliente">Telefone</label>
-        <input type="tel" id="telefoneCliente" placeholder="Seu telefone">
+        <div class="checkout-titulo">📦 <strong>Como deseja receber?</strong></div>
 
-        <label for="tipoEntrega">Como deseja receber?</label>
-        <select id="tipoEntrega">
+        <div class="opcoes-entrega">
+            <button type="button" class="opcao-entrega" id="btn-uber"
+                onclick="selecionarEntrega('Entrega por Uber')">
+                <span class="opcao-icone">🛵</span>
+                <span>
+                    <strong>Entrega por Uber</strong>
+                    <small>Taxa por conta do cliente</small>
+                </span>
+            </button>
+
+            <button type="button" class="opcao-entrega" id="btn-retirada"
+                onclick="selecionarEntrega('Retirada na loja')">
+                <span class="opcao-icone">🏪</span>
+                <span>
+                    <strong>Retirada na loja</strong>
+                    <small>Sem taxa de entrega</small>
+                </span>
+            </button>
+        </div>
+
+        <select id="tipo-entrega" style="display:none;">
+            <option value="">Escolha</option>
+            <option value="Entrega por Uber">Entrega por Uber</option>
             <option value="Retirada na loja">Retirada na loja</option>
-            <option value="Entrega por Uber (taxa paga pelo cliente)">Entrega por Uber (taxa paga pelo cliente)</option>
         </select>
 
-        <label for="enderecoCliente">Endereço para entrega (se necessário)</label>
-        <input type="text" id="enderecoCliente" placeholder="Rua, número e bairro">
+        <div id="campo-endereco" class="campo-endereco">
+            <div class="checkout-titulo endereco-titulo">
+                📍 <strong>Endereço para entrega</strong>
+            </div>
+            <input type="text" id="endereco-cliente"
+                placeholder="Digite seu endereço completo">
+            <small>🛵 A taxa do Uber é por conta do cliente.</small>
+        </div>
 
-        <label for="observacoesPedido">Observações</label>
-        <textarea id="observacoesPedido" placeholder="Conte-nos algum detalhe do pedido"></textarea>
+        <div class="checkout-titulo observacao-titulo">
+            📝 <strong>Observações</strong> <span>(opcional)</span>
+        </div>
 
-        <p class="aviso-pagamento">Pagamento via Pix. Os valores e pesos finais serão confirmados pela loja.</p>
+        <textarea id="observacoes" maxlength="150"
+            placeholder="Alguma observação sobre o pedido?"></textarea>
 
-        <button type="button" class="continuar-comprando" onclick="fecharCarrinho()">
-        CONTINUAR COMPRANDO
-    </button>
-        
-        <button type="button" class="enviar-whatsapp" onclick="enviarPedidoWhatsApp()">
-            🟢 ENVIAR ENCOMENDA PELO WHATSAPP
+        <button type="button" class="continuar" onclick="fecharCarrinho()">
+            CONTINUAR COMPRANDO
+        </button>
+
+        <button type="button" class="finalizar" onclick="finalizarWhatsApp()">
+            ENVIAR ENCOMENDA PELO WHATSAPP
         </button>
     </div>
-
-</aside>
-
+</div>
+    
 <footer>
     <p>© Total Carnes — A qualidade que você confia.</p>
 </footer>
