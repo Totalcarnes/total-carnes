@@ -994,10 +994,6 @@
         <p class="carrinho-vazio">Sua encomenda está vazia.</p>
     </div>
 
-    <button type="button" class="continuar-comprando" onclick="fecharCarrinho()">
-        CONTINUAR COMPRANDO
-    </button>
-
     <div class="dados-cliente">
         <h3>Dados do pedido</h3>
 
@@ -1021,6 +1017,10 @@
 
         <p class="aviso-pagamento">Pagamento via Pix. Os valores e pesos finais serão confirmados pela loja.</p>
 
+        <button type="button" class="continuar-comprando" onclick="fecharCarrinho()">
+        CONTINUAR COMPRANDO
+    </button>
+        
         <button type="button" class="enviar-whatsapp" onclick="enviarPedidoWhatsApp()">
             🟢 ENVIAR ENCOMENDA PELO WHATSAPP
         </button>
@@ -1066,7 +1066,7 @@
     position: fixed;
     inset: 0;
     background: #000a;
-    z-index: 998;
+    z-index: 10001;
     display: none;
 }
 
@@ -1076,7 +1076,7 @@
 
 .carrinho {
     position: fixed;
-    z-index: 999;
+    z-index:10002;
     top: 0;
     right: -450px;
     width: min(420px, 100%);
