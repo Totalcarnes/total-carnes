@@ -364,10 +364,7 @@ function finalizarWhatsApp() {
 
     const tipoEntregaElemento =
         document.getElementById("tipo-entrega");
-
-    const pagamentoElemento =
-        document.getElementById("pagamento");
-
+   
     const observacoesElemento =
         document.getElementById("observacoes");
 
@@ -388,13 +385,6 @@ function finalizarWhatsApp() {
         tipoEntregaElemento
             ? tipoEntregaElemento.value
             : "";
-
-
-    const pagamento =
-        pagamentoElemento
-            ? pagamentoElemento.value
-            : "";
-
 
     const observacoes =
         observacoesElemento
@@ -475,17 +465,6 @@ function finalizarWhatsApp() {
 
     }
 
-
-    if (!pagamento) {
-
-        alert(
-            "Escolha a forma de pagamento."
-        );
-
-        return;
-    }
-
-
     /* =====================================================
        WHATSAPP
        ===================================================== */
@@ -527,10 +506,7 @@ function finalizarWhatsApp() {
 
     }
 
-
-    mensagem +=
-        `\n💳 *Pagamento:* ${pagamento}\n\n`;
-
+   mensagem +="\n";
 
     mensagem +=
         "🛒 *ITENS DA ENCOMENDA*\n\n";
