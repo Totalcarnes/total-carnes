@@ -7,50 +7,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header>
+    <div class="logo">
+        <img src="Logo site.jpeg" alt="Total Carnes">
 
-        <div class="logo">
-
-            <img src="Logo site.jpeg" alt="Total Carnes">
-
-            <div class="logo-texto">
-                <span>Total Carnes</span>
-                <small>A qualidade que você confia</small>
-            </div>
-
+        <div class="logo-texto">
+            <span>Total Carnes</span>
+            <small>A qualidade que você confia</small>
         </div>
+    </div>
 
+    <button
+        class="menu-mobile"
+        id="menuMobile"
+        aria-label="Abrir menu">
+        ☰
+    </button>
 
-        <button
-            class="menu-mobile"
-            id="menuMobile"
-            aria-label="Abrir menu"
-        >
-            ☰
-        </button>
+    <nav id="menuNav">
+        <a href="index.html">🏠 INÍCIO</a>
+        <a href="catalogo.html">🥩 CATÁLOGO</a>
+        <a href="sobre.html">❤️ SOBRE NÓS</a>
+        <a href="contato.html">📍 CONTATO</a>
+    </nav>
 
+    <button class="pedido" onclick="abrirCarrinho()">
+        🛒 PEDIDO
+    </button>
+</header>
 
-        <nav id="menuNav">
-
-            <a href="index.html">🏠 INÍCIO</a>
-
-            <a href="catalogo.html">🥩 CATÁLOGO</a>
-
-            <a href="sobre.html">❤️ SOBRE NÓS</a>
-
-            <a href="contato.html">📍 CONTATO</a>
-
-        </nav>
-
-
-        <button
-            class="pedido"
-            onclick="abrirCarrinho()"
-        >
-            🛒 PEDIDO
-        </button>
-
-    </header>
 <main>
 <section class="catalogo" id="catalogo">
 
@@ -60,598 +46,1360 @@
     </div>
 
     <!-- 1. ESPECIAL DE FIM DE ANO -->
+
     <div class="categoria-produtos">
         <small>ENCOMENDAS ESPECIAIS</small>
         <h2>🎄 Especial de Fim de Ano</h2>
     </div>
 
     <div class="produtos">
-        <div class="produto"><div class="imagem"><img src="pernil.jpg" alt="Pernil"></div><div class="produto-info"><h3>Pernil</h3><button class="adicionar" onclick="adicionarAoCarrinho('Pernil',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="perniltemperado.jpg" alt="Pernil Temperado"></div><div class="produto-info"><h3>Pernil Temperado</h3><button class="adicionar" onclick="adicionarAoCarrinho('Pernil Temperado',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="lombo.jpg" alt="Lombo Suíno"></div><div class="produto-info"><h3>Lombo Suíno</h3><button class="adicionar" onclick="adicionarAoCarrinho('Lombo Suíno',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="fraldinha.jpg" alt="Fraldinha"></div><div class="produto-info"><h3>Fraldinha</h3><button class="adicionar" onclick="adicionarAoCarrinho('Fraldinha',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="Fraldinha Recheada.jpeg" alt="Fraldinha Recheada"></div><div class="produto-info"><h3>Fraldinha Recheada</h3><button class="adicionar" onclick="adicionarAoCarrinho('Fraldinha Recheada',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="pontadeagulha.jpg" alt="Ponta de Agulha"></div><div class="produto-info"><h3>Ponta de Agulha</h3><button class="adicionar" onclick="adicionarAoCarrinho('Ponta de Agulha',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="lagarto1.jpg" alt="Lagarto"></div><div class="produto-info"><h3>Lagarto</h3><button class="adicionar" onclick="adicionarAoCarrinho('Lagarto',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="lagartotemperado.jpg" alt="Lagarto Recheado"></div><div class="produto-info"><h3>Lagarto Recheado</h3><button class="adicionar" onclick="adicionarAoCarrinho('Lagarto Recheado',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="rocambole.jpg" alt="Rocambole"></div><div class="produto-info"><h3>Rocambole</h3><button class="adicionar" onclick="adicionarAoCarrinho('Rocambole',0,'un')">ADICIONAR À ENCOMENDA</button></div></div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="pernil.jpg" alt="Pernil">
+            </div>
+            <div class="produto-info">
+                <h3>Pernil</h3>
+                <button class="adicionar"
+                    onclick="adicionarAoCarrinho('Pernil',0,'kg')">
+                    ADICIONAR À ENCOMENDA
+                </button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="perniltemperado.jpg" alt="Pernil Temperado">
+            </div>
+            <div class="produto-info">
+                <h3>Pernil Temperado</h3>
+                <button class="adicionar"
+                    onclick="adicionarAoCarrinho('Pernil Temperado',0,'kg')">
+                    ADICIONAR À ENCOMENDA
+                </button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="lombo.jpg" alt="Lombo Suíno">
+            </div>
+            <div class="produto-info">
+                <h3>Lombo Suíno</h3>
+                <button class="adicionar"
+                    onclick="adicionarAoCarrinho('Lombo Suíno',0,'kg')">
+                    ADICIONAR À ENCOMENDA
+                </button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="fraldinha.jpg" alt="Fraldinha">
+            </div>
+            <div class="produto-info">
+                <h3>Fraldinha</h3>
+                <button class="adicionar"
+                    onclick="adicionarAoCarrinho('Fraldinha',0,'kg')">
+                    ADICIONAR À ENCOMENDA
+                </button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="Fraldinha Recheada.jpeg" alt="Fraldinha Recheada">
+            </div>
+            <div class="produto-info">
+                <h3>Fraldinha Recheada</h3>
+                <button class="adicionar"
+                    onclick="adicionarAoCarrinho('Fraldinha Recheada',0,'kg')">
+                    ADICIONAR À ENCOMENDA
+                </button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="pontadeagulha.jpg" alt="Ponta de Agulha">
+            </div>
+            <div class="produto-info">
+                <h3>Ponta de Agulha</h3>
+                <button class="adicionar"
+                    onclick="adicionarAoCarrinho('Ponta de Agulha',0,'kg')">
+                    ADICIONAR À ENCOMENDA
+                </button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="lagarto1.jpg" alt="Lagarto">
+            </div>
+            <div class="produto-info">
+                <h3>Lagarto</h3>
+                <button class="adicionar"
+                    onclick="adicionarAoCarrinho('Lagarto',0,'kg')">
+                    ADICIONAR À ENCOMENDA
+                </button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="lagartotemperado.jpg" alt="Lagarto Recheado">
+            </div>
+            <div class="produto-info">
+                <h3>Lagarto Recheado</h3>
+                <button class="adicionar"
+                    onclick="adicionarAoCarrinho('Lagarto Recheado',0,'kg')">
+                    ADICIONAR À ENCOMENDA
+                </button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="rocambole.jpg" alt="Rocambole">
+            </div>
+            <div class="produto-info">
+                <h3>Rocambole</h3>
+                <button class="adicionar"
+                    onclick="adicionarAoCarrinho('Rocambole',0,'un')">
+                    ADICIONAR À ENCOMENDA
+                </button>
+            </div>
+        </div>
+
     </div>
 
     <!-- 2. BOVINOS -->
+
     <div class="categoria-produtos">
         <small>CARNES BOVINAS</small>
         <h2>🥩 Bovinos</h2>
     </div>
 
     <div class="produtos">
-        <div class="produto"><div class="imagem"><img src="miolodeacem.jpg" alt="Miolo de Acém"></div><div class="produto-info"><h3>Miolo de Acém</h3><button class="adicionar" onclick="adicionarAoCarrinho('Miolo de Acém',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="costelaespecial.jpg" alt="Costela Especial"></div><div class="produto-info"><h3>Costela Especial</h3><button class="adicionar" onclick="adicionarAoCarrinho('Costela Especial',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="costelalderipa.jpg" alt="Costela de Ripa"></div><div class="produto-info"><h3>Costela de Ripa</h3><button class="adicionar" onclick="adicionarAoCarrinho('Costela de Ripa',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="chuleta.jpg" alt="Costela Gaúcha"></div><div class="produto-info"><h3>Costela Gaúcha / Chuleta</h3><button class="adicionar" onclick="adicionarAoCarrinho('Costela Gaúcha / Chuleta',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="pontadealcatra.jpg" alt="Ponta de Alcatra"></div><div class="produto-info"><h3>Ponta de Alcatra</h3><button class="adicionar" onclick="adicionarAoCarrinho('Ponta de Alcatra',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="coxaoduro.jpg" alt="Coxão Duro"></div><div class="produto-info"><h3>Coxão Duro</h3><button class="adicionar" onclick="adicionarAoCarrinho('Coxão Duro',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="coxaomole.jpg" alt="Coxão Mole"></div><div class="produto-info"><h3>Coxão Mole</h3><button class="adicionar" onclick="adicionarAoCarrinho('Coxão Mole',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="patinho.jpg" alt="Patinho"></div><div class="produto-info"><h3>Patinho</h3><button class="adicionar" onclick="adicionarAoCarrinho('Patinho',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="alcatra.jpg" alt="Alcatra"></div><div class="produto-info"><h3>Alcatra</h3><button class="adicionar" onclick="adicionarAoCarrinho('Alcatra',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="contra.jpg" alt="Contra Filé"></div><div class="produto-info"><h3>Contra Filé</h3><button class="adicionar" onclick="adicionarAoCarrinho('Contra Filé',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="filemignon.jpg" alt="Filé Mignor"></div><div class="produto-info"><h3>Filé Mignon</h3><button class="adicionar" onclick="adicionarAoCarrinho('Filé Mignon',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="picanha.jpg" alt="Picanha"></div><div class="produto-info"><h3>Picanha</h3><button class="adicionar" onclick="adicionarAoCarrinho('Picanha',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="maminha.jpg" alt="Maminha"></div><div class="produto-info"><h3>Maminha</h3><button class="adicionar" onclick="adicionarAoCarrinho('Maminha',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="cupim.jpg" alt="Cupim"></div><div class="produto-info"><h3>Cupim</h3><button class="adicionar" onclick="adicionarAoCarrinho('Cupim',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="musculo.jpg" alt="Músculo de Boi"></div><div class="produto-info"><h3>Músculo de Boi</h3><button class="adicionar" onclick="adicionarAoCarrinho('Músculo de Boi',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="strogonoff.jpg" alt="Carne para Strogonoff"></div><div class="produto-info"><h3>Carne para Strogonoff</h3><button class="adicionar" onclick="adicionarAoCarrinho('Carne para Strogonoff',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="bifearole.jpg" alt="Bife à Rolê"></div><div class="produto-info"><h3>Bife à Rolê</h3><button class="adicionar" onclick="adicionarAoCarrinho('Bife à Rolê',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="paleta.jpg" alt="Paleta em Bife"></div><div class="produto-info"><h3>Paleta em Bife</h3><button class="adicionar" onclick="adicionarAoCarrinho('Paleta em Bife',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="acempicado.jpg" alt="Acém Picado"></div><div class="produto-info"><h3>Acém Picado</h3><button class="adicionar" onclick="adicionarAoCarrinho('Acém Picado',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="ossobuco.jpg" alt="Osso Buco"></div><div class="produto-info"><h3>Ossobuco</h3><button class="adicionar" onclick="adicionarAoCarrinho('Ossobuco',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="acempaulista.jpg" alt="Acém Paulista"></div><div class="produto-info"><h3>Acém Paulista</h3><button class="adicionar" onclick="adicionarAoCarrinho('Acém Paulista',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="chuletinha.jpg" alt="Chuletinha"></div><div class="produto-info"><h3>Chuletinha</h3><button class="adicionar" onclick="adicionarAoCarrinho('Chuletinha',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="figado.jpg" alt="Fígado de Boi"></div><div class="produto-info"><h3>Fígado de Boi</h3><button class="adicionar" onclick="adicionarAoCarrinho('Fígado de Boi',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="bucho.jpg" alt="Bucho / Dobradinha"></div><div class="produto-info"><h3>Bucho / Dobradinha</h3><button class="adicionar" onclick="adicionarAoCarrinho('Bucho / Dobradinha',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="mocoto.jpg" alt="Mocotó de Boi"></div><div class="produto-info"><h3>Mocotó de Boi</h3><button class="adicionar" onclick="adicionarAoCarrinho('Mocotó de Boi',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
+        <div class="produto">
+            <div class="imagem">
+                <img src="miolodeacem.jpg" alt="Miolo de Acém">
+            </div>
+            <div class="produto-info">
+                <h3>Miolo de Acém</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Miolo de Acém',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="costelaespecial.jpg" alt="Costela Especial">
+            </div>
+            <div class="produto-info">
+                <h3>Costela Especial</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Costela Especial',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="costelalderipa.jpg" alt="Costela de Ripa">
+            </div>
+            <div class="produto-info">
+                <h3>Costela de Ripa</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Costela de Ripa',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="chuleta.jpg" alt="Costela Gaúcha">
+            </div>
+            <div class="produto-info">
+                <h3>Costela Gaúcha / Chuleta</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Costela Gaúcha / Chuleta',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="pontadealcatra.jpg" alt="Ponta de Alcatra">
+            </div>
+            <div class="produto-info">
+                <h3>Ponta de Alcatra</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Ponta de Alcatra',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="coxaoduro.jpg" alt="Coxão Duro">
+            </div>
+            <div class="produto-info">
+                <h3>Coxão Duro</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Coxão Duro',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="coxaomole.jpg" alt="Coxão Mole">
+            </div>
+            <div class="produto-info">
+                <h3>Coxão Mole</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Coxão Mole',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="patinho.jpg" alt="Patinho">
+            </div>
+            <div class="produto-info">
+                <h3>Patinho</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Patinho',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="alcatra.jpg" alt="Alcatra">
+            </div>
+            <div class="produto-info">
+                <h3>Alcatra</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Alcatra',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="contra.jpg" alt="Contra Filé">
+            </div>
+            <div class="produto-info">
+                <h3>Contra Filé</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Contra Filé',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="filemignon.jpg" alt="Filé Mignon">
+            </div>
+            <div class="produto-info">
+                <h3>Filé Mignon</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Filé Mignon',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="picanha.jpg" alt="Picanha">
+            </div>
+            <div class="produto-info">
+                <h3>Picanha</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Picanha',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="maminha.jpg" alt="Maminha">
+            </div>
+            <div class="produto-info">
+                <h3>Maminha</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Maminha',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="cupim.jpg" alt="Cupim">
+            </div>
+            <div class="produto-info">
+                <h3>Cupim</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Cupim',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="musculo.jpg" alt="Músculo de Boi">
+            </div>
+            <div class="produto-info">
+                <h3>Músculo de Boi</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Músculo de Boi',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="strogonoff.jpg" alt="Carne para Strogonoff">
+            </div>
+            <div class="produto-info">
+                <h3>Carne para Strogonoff</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Carne para Strogonoff',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="bifearole.jpg" alt="Bife à Rolê">
+            </div>
+            <div class="produto-info">
+                <h3>Bife à Rolê</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Bife à Rolê',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="paleta.jpg" alt="Paleta em Bife">
+            </div>
+            <div class="produto-info">
+                <h3>Paleta em Bife</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Paleta em Bife',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="acempicado.jpg" alt="Acém Picado">
+            </div>
+            <div class="produto-info">
+                <h3>Acém Picado</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Acém Picado',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="ossobuco.jpg" alt="Ossobuco">
+            </div>
+            <div class="produto-info">
+                <h3>Ossobuco</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Ossobuco',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="acempaulista.jpg" alt="Acém Paulista">
+            </div>
+            <div class="produto-info">
+                <h3>Acém Paulista</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Acém Paulista',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="chuletinha.jpg" alt="Chuletinha">
+            </div>
+            <div class="produto-info">
+                <h3>Chuletinha</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Chuletinha',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="figado.jpg" alt="Fígado">
+            </div>
+            <div class="produto-info">
+                <h3>Fígado</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Fígado',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="bucho.jpg" alt="Bucho / Dobradinha">
+            </div>
+            <div class="produto-info">
+                <h3>Bucho / Dobradinha</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Bucho / Dobradinha',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="mocoto.jpg" alt="Mocotó">
+            </div>
+            <div class="produto-info">
+                <h3>Mocotó</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Mocotó',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
     </div>
 
-    <!-- 3. SUÍNOS -->
+    <!-- FIM DA CATEGORIA BOVINOS -->
+
+        <!-- 3. SUÍNOS -->
+
     <div class="categoria-produtos">
         <small>CARNES SUÍNAS</small>
         <h2>🐖 Suínos</h2>
     </div>
 
     <div class="produtos">
-        <div class="produto"><div class="imagem"><img src="bistecalombo.jpg" alt="Bisteca Lombo"></div><div class="produto-info"><h3>Bisteca de Lombo</h3><button class="adicionar" onclick="adicionarAoCarrinho('Bisteca de Lombo',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="bistecacopa.jpg" alt="Bisteca Copa"></div><div class="produto-info"><h3>Bisteca Copa</h3><button class="adicionar" onclick="adicionarAoCarrinho('Bisteca Copa',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="costelinha.jpg" alt="Costelinha Suína"></div><div class="produto-info"><h3>Costelinha Suína</h3><button class="adicionar" onclick="adicionarAoCarrinho('Costelinha Suína',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="pernilfatiado.jpg" alt="Pernil Fatiado"></div><div class="produto-info"><h3>Pernil Fatiado</h3><button class="adicionar" onclick="adicionarAoCarrinho('Pernil Fatiado',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="pernilpicado.jpg" alt="Pernil Picado"></div><div class="produto-info"><h3>Pernil Picado</h3><button class="adicionar" onclick="adicionarAoCarrinho('Pernil Picado',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="barriga.jpg" alt="Barriga Suína / Panceta"></div><div class="produto-info"><h3>Barriga Suína / Panceta</h3><button class="adicionar" onclick="adicionarAoCarrinho('Barriga Suína / Panceta',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="toucinho.jpg" alt="Toucinho para Pururuca"></div><div class="produto-info"><h3>Toucinho para Pururuca</h3><button class="adicionar" onclick="adicionarAoCarrinho('Toucinho para Pururuca',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="bistecalombo.jpg" alt="Bisteca de Lombo">
+            </div>
+            <div class="produto-info">
+                <h3>Bisteca de Lombo</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Bisteca de Lombo',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="bistecacopa.jpg" alt="Bisteca Copa">
+            </div>
+            <div class="produto-info">
+                <h3>Bisteca Copa</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Bisteca Copa',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="costelinha.jpg" alt="Costelinha Suína">
+            </div>
+            <div class="produto-info">
+                <h3>Costelinha Suína</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Costelinha Suína',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="pernilfatiado.jpg" alt="Pernil Fatiado">
+            </div>
+            <div class="produto-info">
+                <h3>Pernil Fatiado</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Pernil Fatiado',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="pernilpicado.jpg" alt="Pernil Picado">
+            </div>
+            <div class="produto-info">
+                <h3>Pernil Picado</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Pernil Picado',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="barriga.jpg" alt="Barriga / Panceta">
+            </div>
+            <div class="produto-info">
+                <h3>Barriga / Panceta</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Barriga / Panceta',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="toucinho.jpg" alt="Toucinho">
+            </div>
+            <div class="produto-info">
+                <h3>Toucinho</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Toucinho',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
     </div>
 
     <!-- 4. AVES -->
+
     <div class="categoria-produtos">
         <small>CARNES DE AVES</small>
-        <h2>🍗 Aves</h2>
+        <h2>🐔 Aves</h2>
     </div>
 
     <div class="produtos">
-        <div class="produto"><div class="imagem"><img src="filedefrango.jpg" alt="Filé de Frango"></div><div class="produto-info"><h3>Filé de Frango</h3><button class="adicionar" onclick="adicionarAoCarrinho('Filé de Frango',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="peitocosso.jpg" alt="Peito de Frango com Osso"></div><div class="produto-info"><h3>Peito de Frango com Osso</h3><button class="adicionar" onclick="adicionarAoCarrinho('Peito de Frango com Osso',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="peitosemosso.jpg" alt="Peito de Frango sem Osso"></div><div class="produto-info"><h3>Peito de Frango sem Osso</h3><button class="adicionar" onclick="adicionarAoCarrinho('Peito de Frango sem Osso',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="coxa.jpg" alt="Coxa de Frango"></div><div class="produto-info"><h3>Coxa de Frango</h3><button class="adicionar" onclick="adicionarAoCarrinho('Coxa de Frango',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="sobrecoxa.jpg" alt="Sobrecoxa de Frango"></div><div class="produto-info"><h3>Sobrecoxa de Frango</h3><button class="adicionar" onclick="adicionarAoCarrinho('Sobrecoxa de Frango',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="asa.jpg" alt="Asa de Frango"></div><div class="produto-info"><h3>Asa de Frango</h3><button class="adicionar" onclick="adicionarAoCarrinho('Asa de Frango',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="frangopassarinho.jpg" alt="Frango a Passarinho"></div><div class="produto-info"><h3>Frango a Passarinho</h3><button class="adicionar" onclick="adicionarAoCarrinho('Frango a Passarinho',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="temperado.jpg" alt="Frango a Passarinho Temperado"></div><div class="produto-info"><h3>Frango a Passarinho Temperado</h3><button class="adicionar" onclick="adicionarAoCarrinho('Frango a Passarinho Temperado',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="frango.jpg" alt="Frango Inteiro"></div><div class="produto-info"><h3>Frango Inteiro</h3><button class="adicionar" onclick="adicionarAoCarrinho('Frango Inteiro',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="pedefrango.jpg" alt="Pé de Frango"></div><div class="produto-info"><h3>Pé de Frango</h3><button class="adicionar" onclick="adicionarAoCarrinho('Pé de Frango',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="galinha.jpg" alt="Galinha Caipira"></div><div class="produto-info"><h3>Galinha Caipira</h3><button class="adicionar" onclick="adicionarAoCarrinho('Galinha Caipira',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="galinhapicada.jpg" alt="Galinha Picada"></div><div class="produto-info"><h3>Galinha Picada</h3><button class="adicionar" onclick="adicionarAoCarrinho('Galinha Picada',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="coracao.jpg" alt="Coração Temperado"></div><div class="produto-info"><h3>Coração Temperado</h3><button class="adicionar" onclick="adicionarAoCarrinho('Coração Temperado',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-    </div>
 
+        <div class="produto">
+            <div class="imagem">
+                <img src="filedefrango.jpg" alt="Filé de Frango">
+            </div>
+            <div class="produto-info">
+                <h3>Filé de Frango</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Filé de Frango',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="peitocosso.jpg" alt="Peito de Frango com Osso">
+            </div>
+            <div class="produto-info">
+                <h3>Peito de Frango com Osso</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Peito de Frango com Osso',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="peitosemosso.jpg" alt="Peito de Frango sem Osso">
+            </div>
+            <div class="produto-info">
+                <h3>Peito de Frango sem Osso</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Peito de Frango sem Osso',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="coxa.jpg" alt="Coxa de Frango">
+            </div>
+            <div class="produto-info">
+                <h3>Coxa de Frango</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Coxa de Frango',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="sobrecoxa.jpg" alt="Sobrecoxa">
+            </div>
+            <div class="produto-info">
+                <h3>Sobrecoxa</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Sobrecoxa',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="asa.jpg" alt="Asa de Frango">
+            </div>
+            <div class="produto-info">
+                <h3>Asa de Frango</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Asa de Frango',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="frangopassarinho.jpg" alt="Frango a Passarinho">
+            </div>
+            <div class="produto-info">
+                <h3>Frango a Passarinho</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Frango a Passarinho',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="temperado.jpg" alt="Frango Temperado">
+            </div>
+            <div class="produto-info">
+                <h3>Frango Temperado</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Frango Temperado',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="frango.jpg" alt="Frango Inteiro">
+            </div>
+            <div class="produto-info">
+                <h3>Frango Inteiro</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Frango Inteiro',0,'un')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="pedefrango.jpg" alt="Pé de Frango">
+            </div>
+            <div class="produto-info">
+                <h3>Pé de Frango</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Pé de Frango',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="galinha.jpg" alt="Galinha Caipira">
+            </div>
+            <div class="produto-info">
+                <h3>Galinha Caipira</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Galinha Caipira',0,'un')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="galinhapicada.jpg" alt="Galinha Picada">
+            </div>
+            <div class="produto-info">
+                <h3>Galinha Picada</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Galinha Picada',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="coracao.jpg" alt="Coração de Frango">
+            </div>
+            <div class="produto-info">
+                <h3>Coração de Frango</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Coração de Frango',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+    </div>
     <!-- 5. PERTENCES PARA FEIJOADA -->
+
     <div class="categoria-produtos">
-        <small>PARA SUA FEIJOADA</small>
+        <small>TRADIÇÃO E SABOR</small>
         <h2>🍲 Pertences para Feijoada</h2>
     </div>
 
     <div class="produtos">
-        <div class="produto"><div class="imagem"><img src="calabresafriella.jpg" alt="Linguiça Defumada Calabresa Friella"></div><div class="produto-info"><h3>Linguiça Defumada Calabresa Friella</h3><button class="adicionar" onclick="adicionarAoCarrinho('Linguiça Defumada Calabresa Friella',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="calabresaseara.jpg" alt="Linguiça Defumada Calabresa Seara"></div><div class="produto-info"><h3>Linguiça Defumada Calabresa Seara</h3><button class="adicionar" onclick="adicionarAoCarrinho('Linguiça Defumada Calabresa Seara',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="carneseca.jpg" alt="Carne Seca de Primeira (Coxão Duro)"></div><div class="produto-info"><h3>Carne Seca de Primeira (Coxão Duro)</h3><button class="adicionar" onclick="adicionarAoCarrinho('Carne Seca de Primeira (Coxão Duro)',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="costelinhasalgada.jpg" alt="Costelinha Salgada"></div><div class="produto-info"><h3>Costelinha Salgada</h3><button class="adicionar" onclick="adicionarAoCarrinho('Costelinha Salgada',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="pe.jpg" alt="Pezinho Salgado"></div><div class="produto-info"><h3>Pezinho Salgado</h3><button class="adicionar" onclick="adicionarAoCarrinho('Pezinho Salgado',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="orelha.jpg" alt="Orelha Salgada"></div><div class="produto-info"><h3>Orelha Salgada</h3><button class="adicionar" onclick="adicionarAoCarrinho('Orelha Salgada',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="rabo.jpg" alt="Rabinho Salgado"></div><div class="produto-info"><h3>Rabinho Salgado</h3><button class="adicionar" onclick="adicionarAoCarrinho('Rabinho Salgado',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="calabresafriella.jpg" alt="Calabresa Friella">
+            </div>
+            <div class="produto-info">
+                <h3>Calabresa Friella</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Calabresa Friella',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="calabresaseara.jpg" alt="Calabresa Seara">
+            </div>
+            <div class="produto-info">
+                <h3>Calabresa Seara</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Calabresa Seara',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="carneseca.jpg" alt="Carne Seca">
+            </div>
+            <div class="produto-info">
+                <h3>Carne Seca</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Carne Seca',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="costelinhasalgada.jpg" alt="Costelinha Salgada">
+            </div>
+            <div class="produto-info">
+                <h3>Costelinha Salgada</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Costelinha Salgada',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="pe.jpg" alt="Pé Salgado">
+            </div>
+            <div class="produto-info">
+                <h3>Pé Salgado</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Pé Salgado',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="orelha.jpg" alt="Orelha Salgada">
+            </div>
+            <div class="produto-info">
+                <h3>Orelha Salgada</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Orelha Salgada',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="rabo.jpg" alt="Rabinho Salgado">
+            </div>
+            <div class="produto-info">
+                <h3>Rabinho Salgado</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Rabinho Salgado',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
     </div>
 
     <!-- 6. LINGUIÇAS -->
+
     <div class="categoria-produtos">
-        <small>VARIEDADE E SABOR</small>
+        <small>PARA SEU CHURRASCO</small>
         <h2>🌭 Linguiças</h2>
     </div>
 
     <div class="produtos">
-        <div class="produto"><div class="imagem"><img src="linguiçafrango.jpg" alt="Linguiça de Frango"></div><div class="produto-info"><h3>Linguiça de Frango</h3><button class="adicionar" onclick="adicionarAoCarrinho('Linguiça de Frango',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="aurora.jpg" alt="Linguiça Aurora"></div><div class="produto-info"><h3>Linguiça Aurora</h3><button class="adicionar" onclick="adicionarAoCarrinho('Linguiça Aurora',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="nabrasa.jpg" alt="Linguiça na Brasa"></div><div class="produto-info"><h3>Linguiça na Brasa</h3><button class="adicionar" onclick="adicionarAoCarrinho('Linguiça na Brasa',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="friella.jpg" alt="Linguiça Friella"></div><div class="produto-info"><h3>Linguiça Friella</h3><button class="adicionar" onclick="adicionarAoCarrinho('Linguiça Friella',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="apimentadafina.jpg" alt="Linguiça Apimentada Fina"></div><div class="produto-info"><h3>Linguiça Apimentada Fina</h3><button class="adicionar" onclick="adicionarAoCarrinho('Linguiça Apimentada Fina',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="apimentadagrossa.jpg" alt="Linguiça Apimentada Grossa"></div><div class="produto-info"><h3>Linguiça Apimentada Grossa</h3><button class="adicionar" onclick="adicionarAoCarrinho('Linguiça Apimentada Grossa',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="fina.jpg" alt="Linguiça Fina sem Pimenta"></div><div class="produto-info"><h3>Linguiça Fina sem Pimenta</h3><button class="adicionar" onclick="adicionarAoCarrinho('Linguiça Fina sem Pimenta',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="linguiçafrango.jpg" alt="Linguiça de Frango">
+            </div>
+            <div class="produto-info">
+                <h3>Linguiça de Frango</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Linguiça de Frango',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="aurora.jpg" alt="Linguiça Aurora">
+            </div>
+            <div class="produto-info">
+                <h3>Linguiça Aurora</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Linguiça Aurora',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="nabrasa.jpg" alt="Linguiça Perdigão na Brasa">
+            </div>
+            <div class="produto-info">
+                <h3>Linguiça Perdigão na Brasa</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Linguiça Perdigão na Brasa',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="friella.jpg" alt="Linguiça Friella">
+            </div>
+            <div class="produto-info">
+                <h3>Linguiça Friella</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Linguiça Friella',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="apimentadafina.jpg" alt="Linguiça Apimentada Fina">
+            </div>
+            <div class="produto-info">
+                <h3>Linguiça Apimentada Fina</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Linguiça Apimentada Fina',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="apimentadagrossa.jpg" alt="Linguiça Apimentada Grossa">
+            </div>
+            <div class="produto-info">
+                <h3>Linguiça Apimentada Grossa</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Linguiça Apimentada Grossa',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="fina.jpg" alt="Linguiça Fina sem Pimenta">
+            </div>
+            <div class="produto-info">
+                <h3>Linguiça Fina sem Pimenta</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Linguiça Fina sem Pimenta',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
     </div>
 
     <!-- 7. CONGELADOS -->
+
     <div class="categoria-produtos">
-        <small>PRATICIDADE PARA VOCÊ</small>
+        <small>PRATICIDADE NO DIA A DIA</small>
         <h2>❄️ Congelados</h2>
     </div>
 
     <div class="produtos">
-        <div class="produto"><div class="imagem"><img src="batata.jpg" alt="Batata Palito"></div><div class="produto-info"><h3>Batata Palito</h3><button class="adicionar" onclick="adicionarAoCarrinho('Batata Palito',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="chickenitos.jpg" alt="Empanadinho de Frango"></div><div class="produto-info"><h3>Empanadinho de Frango</h3><button class="adicionar" onclick="adicionarAoCarrinho('Empanadinho de Frango',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="coxinhadaasa.jpg" alt="Coxinha da Asa"></div><div class="produto-info"><h3>Coxinha da Asa</h3><button class="adicionar" onclick="adicionarAoCarrinho('Coxinha da Asa',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="artesanal.jpg" alt="Hambúrguer Artesanal 100 g"></div><div class="produto-info"><h3>Hambúrguer Artesanal 100 g</h3><button class="adicionar" onclick="adicionarAoCarrinho('Hambúrguer Artesanal 100 g',0,'un')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="maturatta.jpg" alt="Hambúrguer Maturatta 180g"></div><div class="produto-info"><h3>Hambúrguer Maturatta 180 g</h3><button class="adicionar" onclick="adicionarAoCarrinho('Hambúrguer Maturatta 180 g',0,'un')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="friboi.jpg" alt="Hambúrguer Friboi 56g"></div><div class="produto-info"><h3>Hambúrguer Friboi 56 g</h3><button class="adicionar" onclick="adicionarAoCarrinho('Hambúrguer Friboi 56 g',0,'un')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="tulipa.jpg" alt="Tulipa de Frango"></div><div class="produto-info"><h3>Tulipa de Frango</h3><button class="adicionar" onclick="adicionarAoCarrinho('Tulipa de Frango',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="rabada.jpg" alt="Rabada de Boi"></div><div class="produto-info"><h3>Rabada de Boi</h3><button class="adicionar" onclick="adicionarAoCarrinho('Rabada de Boi',0,'kg')">ADICIONAR À ENCOMENDA</button></div></div>
-    </div>
 
-    <!-- 8. ACOMPANHAMENTOS -->
+        <div class="produto">
+            <div class="imagem">
+                <img src="batata.jpg" alt="Batata Palito">
+            </div>
+            <div class="produto-info">
+                <h3>Batata Palito</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Batata Palito',0,'un')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="chickenitos.jpg" alt="Empanadinhos">
+            </div>
+            <div class="produto-info">
+                <h3>Empanadinhos</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Empanadinhos',0,'un')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="coxinhadaasa.jpg" alt="Coxinha da Asa">
+            </div>
+            <div class="produto-info">
+                <h3>Coxinha da Asa</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Coxinha da Asa',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="artesanal.jpg" alt="Hambúrguer Artesanal">
+            </div>
+            <div class="produto-info">
+                <h3>Hambúrguer Artesanal 100 g</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Hambúrguer Artesanal 100 g',0,'un')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="maturatta.jpg" alt="Hambúrguer Maturatta">
+            </div>
+            <div class="produto-info">
+                <h3>Hambúrguer Maturatta 180 g</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Hambúrguer Maturatta 180 g',0,'un')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="friboi.jpg" alt="Hambúrguer Friboi">
+            </div>
+            <div class="produto-info">
+                <h3>Hambúrguer Friboi 56 g</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Hambúrguer Friboi 56 g',0,'un')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="tulipa.jpg" alt="Tulipa de Frango">
+            </div>
+            <div class="produto-info">
+                <h3>Tulipa de Frango</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Tulipa de Frango',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="rabada.jpg" alt="Rabada">
+            </div>
+            <div class="produto-info">
+                <h3>Rabada</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Rabada',0,'kg')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+    </div>
+        <!-- 8. ACOMPANHAMENTOS -->
+
     <div class="categoria-produtos">
-        <small>PARA SEU CHURRASCO</small>
-        <h2>🥖 Acompanhamentos</h2>
+        <small>PARA ACOMPANHAR</small>
+        <h2>🧄 Acompanhamentos</h2>
     </div>
 
     <div class="produtos">
-        <div class="produto"><div class="imagem"><img src="paodealho.jpeg" alt="Pão de Alho"></div><div class="produto-info"><h3>Pão de Alho</h3><button class="adicionar" onclick="adicionarAoCarrinho('Pão de Alho',0,'un')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="queijo.jpeg" alt="Queijo Coalho"></div><div class="produto-info"><h3>Queijo Coalho</h3><button class="adicionar" onclick="adicionarAoCarrinho('Queijo Coalho',0,'un')">ADICIONAR À ENCOMENDA</button></div></div>
-        <div class="produto"><div class="imagem"><img src="salgrosso.jpeg" alt="Sal Grosso"></div><div class="produto-info"><h3>Sal Grosso</h3><button class="adicionar" onclick="adicionarAoCarrinho('Sal Grosso',0,'un')">ADICIONAR À ENCOMENDA</button></div></div>
 
         <div class="produto">
-            <div class="imagem"><img src="saldeparrilla.jpg" alt="Sal de Parrilla"></div>
+            <div class="imagem">
+                <img src="paodealho.jpeg" alt="Pão de Alho">
+            </div>
+            <div class="produto-info">
+                <h3>Pão de Alho</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Pão de Alho',0,'un')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="queijo.jpeg" alt="Queijo Coalho">
+            </div>
+            <div class="produto-info">
+                <h3>Queijo Coalho</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Queijo Coalho',0,'un')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="salgrosso.jpeg" alt="Sal Grosso">
+            </div>
+            <div class="produto-info">
+                <h3>Sal Grosso</h3>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Sal Grosso',0,'un')">ADICIONAR À ENCOMENDA</button>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="imagem">
+                <img src="saldeparrilla.jpg" alt="Sal de Parrilla">
+            </div>
             <div class="produto-info">
                 <h3>Sal de Parrilla</h3>
-                <label class="label-sabor">Escolha o sabor:</label>
-                <select class="select-sabor" id="sabor-sal">
-                    <option value="Tradicional">Tradicional</option>
-                    <option value="Ervas Finas">Ervas Finas</option>
-                    <option value="Chimichurri">Chimichurri</option>
-                    <option value="Com Alho">Com Alho</option>
-                    <option value="Defumado com Pimenta">Defumado com Pimenta</option>
-                    <option value="Pimenta-do-Reino">Pimenta-do-Reino</option>
-                </select>
-                <button class="adicionar" onclick="adicionarComSabor('Sal de Parrilla',0,'un','sabor-sal')">ADICIONAR À ENCOMENDA</button>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Sal de Parrilla',0,'un')">ADICIONAR À ENCOMENDA</button>
             </div>
         </div>
 
         <div class="produto">
-            <div class="imagem"><img src="farofa.jpeg" alt="Farofa"></div>
+            <div class="imagem">
+                <img src="farofa.jpeg" alt="Farofa">
+            </div>
             <div class="produto-info">
                 <h3>Farofa</h3>
-                <label class="label-sabor">Escolha o sabor:</label>
-                <select class="select-sabor" id="sabor-farofa">
-                    <option value="Pequi">Pequi</option>
-                    <option value="Carne Seca">Carne Seca</option>
-                    <option value="Bacon">Bacon</option>
-                    <option value="Costelinha com Limão">Costelinha com Limão</option>
-                    <option value="Torresmo">Torresmo</option>
-                    <option value="Picanha">Picanha</option>
-                    <option value="Costela">Costela</option>
-                    <option value="Churrasco">Churrasco</option>
-                </select>
-                <button class="adicionar" onclick="adicionarComSabor('Farofa',0,'un','sabor-farofa')">ADICIONAR À ENCOMENDA</button>
+                <button class="adicionar" onclick="adicionarAoCarrinho('Farofa',0,'un')">ADICIONAR À ENCOMENDA</button>
             </div>
         </div>
+
     </div>
 
 </section>
 </main>
 
-    <!-- =========================
-         CARRINHO
-    ========================== -->
+<!-- BOTÃO FLUTUANTE DO PEDIDO -->
 
-    <div
-        id="carrinho"
-        class="carrinho"
-    >
+<button class="pedido-flutuante" onclick="abrirCarrinho()">
+    🛒 Faça seu pedido
+    <span id="contadorCarrinho">0</span>
+</button>
 
-        <div class="carrinho-topo">
+<!-- PAINEL DO CARRINHO -->
 
-            <strong>
-                🛒 Sua Encomenda
-            </strong>
+<div class="fundo-carrinho" id="fundoCarrinho" onclick="fecharCarrinho()"></div>
 
-            <button onclick="fecharCarrinho()">
-                ×
-            </button>
+<aside class="carrinho" id="carrinho">
 
-        </div>
-
-
-        <div
-            id="itens-carrinho"
-            class="itens-carrinho"
-        >
-
-            <p>
-                Seu carrinho está vazio.
-            </p>
-
-        </div>
-
-
-        <button
-            class="continuar"
-            onclick="fecharCarrinho()"
-        >
-            CONTINUAR COMPRANDO
-        </button>
-
-
-        <button
-            class="finalizar"
-            onclick="finalizarWhatsApp()"
-        >
-            ENVIAR ENCOMENDA PELO WHATSAPP
-        </button>
-
-
-        <!-- DADOS DO PEDIDO -->
-
-        <div
-            id="dados-pedido"
-            class="dados-pedido"
-        >
-
-            <div class="checkout-titulo">
-
-                👤 <strong>
-                    Seus dados
-                </strong>
-
-            </div>
-
-
-            <input
-                type="text"
-                id="nome-cliente"
-                placeholder="Seu nome"
-            >
-
-
-            <input
-                type="tel"
-                id="telefone-cliente"
-                placeholder="Seu telefone"
-            >
-
-
-            <div class="checkout-titulo">
-
-                📦 <strong>
-                    Como deseja receber?
-                </strong>
-
-            </div>
-
-
-            <div class="opcoes-entrega">
-
-
-                <!-- ENTREGA POR UBER -->
-
-                <button
-                    type="button"
-                    class="opcao-entrega"
-                    id="btn-uber"
-                    onclick="selecionarEntrega('Entrega por Uber')"
-                >
-
-                    <span class="opcao-icone">
-                        🛵
-                    </span>
-
-                    <span>
-
-                        <strong>
-                            Entrega por Uber
-                        </strong>
-
-                        <small>
-                            Taxa por conta do cliente
-                        </small>
-
-                    </span>
-
-                </button>
-
-
-                <!-- RETIRADA NA LOJA -->
-
-                <button
-                    type="button"
-                    class="opcao-entrega"
-                    id="btn-retirada"
-                    onclick="selecionarEntrega('Retirada na loja')"
-                >
-
-                    <span class="opcao-icone">
-                        🏪
-                    </span>
-
-                    <span>
-
-                        <strong>
-                            Retirada na loja
-                        </strong>
-
-                        <small>
-                            Sem taxa de entrega
-                        </small>
-
-                    </span>
-
-                </button>
-
-            </div>
-
-
-            <select
-                id="tipo-entrega"
-                style="display:none;"
-            >
-
-                <option value="">
-                    Escolha
-                </option>
-
-                <option value="Entrega por Uber">
-                    Entrega por Uber
-                </option>
-
-                <option value="Retirada na loja">
-                    Retirada na loja
-                </option>
-
-            </select>
-
-
-            <!-- ENDEREÇO PARA ENTREGA -->
-
-            <div
-                id="campo-endereco"
-                class="campo-endereco"
-            >
-
-                <div class="checkout-titulo endereco-titulo">
-
-                    📍 <strong>
-                        Endereço para entrega
-                    </strong>
-
-                </div>
-
-
-                <input
-                    type="text"
-                    id="endereco-cliente"
-                    placeholder="Digite seu endereço completo"
-                >
-
-
-                <small>
-                    🛵 A taxa do Uber é por conta do cliente.
-                </small>
-
-            </div>
-
-
-            <!-- FORMA DE PAGAMENTO -->
-
-            <div class="checkout-titulo">
-
-                💳 <strong>
-                    Forma de pagamento
-                </strong>
-
-            </div>
-
-
-            <div class="pix-opcao">
-
-                <span class="pix-icone">
-                    💠
-                </span>
-
-                <span>
-
-                    <strong>
-                        PIX
-                    </strong>
-
-                    <small>
-                        Pagamento via Pix
-                    </small>
-
-                </span>
-
-                <span class="pix-selecionado">
-                    ●
-                </span>
-
-            </div>
-
-
-            <select
-                id="pagamento"
-                style="display:none;"
-            >
-
-                <option value="Pix">
-                    Pix
-                </option>
-
-            </select>
-
-
-            <!-- OBSERVAÇÕES -->
-
-            <div class="checkout-titulo observacao-titulo">
-
-                📝 <strong>
-                    Observações
-                </strong>
-
-                <span>
-                    (opcional)
-                </span>
-
-            </div>
-
-
-            <textarea
-                id="observacoes"
-                maxlength="150"
-                placeholder="Alguma observação sobre o pedido?"
-            ></textarea>
-
-        </div>
-
+    <div class="carrinho-topo">
+        <h2>🛒 Sua Encomenda</h2>
+        <button type="button" class="fechar-carrinho" onclick="fecharCarrinho()">×</button>
     </div>
 
+    <div id="listaCarrinho" class="lista-carrinho">
+        <p class="carrinho-vazio">Sua encomenda está vazia.</p>
+    </div>
 
+    <button type="button" class="continuar-comprando" onclick="fecharCarrinho()">
+        CONTINUAR COMPRANDO
+    </button>
 
-<a
-        href="https://wa.me/5511953000827"
-        class="whatsapp-flutuante"
-        target="_blank"
-        aria-label="Fazer pedido pelo WhatsApp"
-    >
+    <div class="dados-cliente">
+        <h3>Dados do pedido</h3>
 
-        <span>
-            💬
-        </span>
+        <label for="nomeCliente">Nome completo</label>
+        <input type="text" id="nomeCliente" placeholder="Seu nome">
 
-        <strong>
-            Faça seu pedido
-        </strong>
+        <label for="telefoneCliente">Telefone</label>
+        <input type="tel" id="telefoneCliente" placeholder="Seu telefone">
 
-    </a>
+        <label for="tipoEntrega">Como deseja receber?</label>
+        <select id="tipoEntrega">
+            <option value="Retirada na loja">Retirada na loja</option>
+            <option value="Entrega por Uber (taxa paga pelo cliente)">Entrega por Uber (taxa paga pelo cliente)</option>
+        </select>
+
+        <label for="enderecoCliente">Endereço para entrega (se necessário)</label>
+        <input type="text" id="enderecoCliente" placeholder="Rua, número e bairro">
+
+        <label for="observacoesPedido">Observações</label>
+        <textarea id="observacoesPedido" placeholder="Conte-nos algum detalhe do pedido"></textarea>
+
+        <p class="aviso-pagamento">Pagamento via Pix. Os valores e pesos finais serão confirmados pela loja.</p>
+
+        <button type="button" class="enviar-whatsapp" onclick="enviarPedidoWhatsApp()">
+            🟢 ENVIAR ENCOMENDA PELO WHATSAPP
+        </button>
+    </div>
+
+</aside>
+
+<footer>
+    <p>© Total Carnes — A qualidade que você confia.</p>
+</footer>
+
+<style>
+/* CARRINHO */
+
+.pedido-flutuante {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 900;
+    background: #e52b23;
+    color: white;
+    border: 0;
+    border-radius: 30px;
+    padding: 14px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 18px #0008;
+}
+
+#contadorCarrinho {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    background: white;
+    color: #e52b23;
+    border-radius: 50%;
+    min-width: 22px;
+    height: 22px;
+}
+
+.fundo-carrinho {
+    position: fixed;
+    inset: 0;
+    background: #000a;
+    z-index: 998;
+    display: none;
+}
+
+.fundo-carrinho.aberto {
+    display: block;
+}
+
+.carrinho {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: -450px;
+    width: min(420px, 100%);
+    height: 100%;
+    overflow-y: auto;
+    background: #111;
+    color: white;
+    padding: 22px;
+    box-sizing: border-box;
+    transition: right .3s ease;
+    box-shadow: -5px 0 25px #0008;
+}
+
+.carrinho.aberto {
+    right: 0;
+}
+
+.carrinho-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 12px;
+}
+
+.carrinho-topo h2 {
+    margin: 0;
+    font-size: 23px;
+}
+
+.fechar-carrinho {
+    color: white;
+    background: transparent;
+    border: 0;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.lista-carrinho {
+    margin: 18px 0;
+}
+
+.carrinho-vazio {
+    color: #bbb;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.item-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 0;
+    border-bottom: 1px solid #333;
+}
+
+.item-carrinho h4 {
+    margin: 0 0 5px;
+}
+
+.item-carrinho small {
+    color: #ccc;
+}
+
+.controles-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.controles-quantidade button {
+    border: 0;
+    border-radius: 5px;
+    padding: 6px 11px;
+    cursor: pointer;
+    color: white;
+    background: #444;
+    font-size: 17px;
+}
+
+.controles-quantidade .mais {
+    background: #e87524;
+}
+
+.continuar-comprando,
+.enviar-whatsapp {
+    width: 100%;
+    padding: 14px;
+    margin: 8px 0;
+    border: 0;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.continuar-comprando {
+    background: #333;
+    color: white;
+}
+
+.enviar-whatsapp {
+    background: #20c763;
+    color: white;
+    margin-top: 16px;
+}
+
+.dados-cliente {
+    margin-top: 22px;
+}
+
+.dados-cliente h3 {
+    margin-bottom: 15px;
+}
+
+.dados-cliente label {
+    display: block;
+    margin: 12px 0 6px;
+    color: #ddd;
+}
+
+.dados-cliente input,
+.dados-cliente select,
+.dados-cliente textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+.dados-cliente textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.aviso-pagamento {
+    color: #ccc;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+body.carrinho-aberto {
+    overflow: hidden;
+}
+
+@media (max-width: 480px) {
+    .pedido-flutuante {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .carrinho {
+        padding: 18px;
+    }
+}
+</style>
 
 <script>
-// Carrinho do catálogo Total Carnes
-const itensCarrinho = [];
-let tipoEntregaSelecionado = '';
+const carrinho = [];
 
-function abrirCarrinho() {
-  const carrinho = document.getElementById('carrinho');
-  if (carrinho) {
-    carrinho.classList.add('ativo');
-    carrinho.style.display = 'block';
-    carrinho.setAttribute('aria-hidden', 'false');
-  }
-  atualizarCarrinho();
-}
+function adicionarAoCarrinho(nome, preco = 0, unidade = 'kg') {
+    const existente = carrinho.find(item =>
+        item.nome === nome && item.unidade === unidade
+    );
 
-function fecharCarrinho() {
-  const carrinho = document.getElementById('carrinho');
-  if (carrinho) {
-    carrinho.classList.remove('ativo');
-    carrinho.style.display = '';
-    carrinho.setAttribute('aria-hidden', 'true');
-  }
-}
+    if (existente) {
+        existente.quantidade += 1;
+    } else {
+        carrinho.push({
+            nome: nome,
+            preco: preco,
+            unidade: unidade,
+            quantidade: 1
+        });
+    }
 
-function adicionarAoCarrinho(nome, preco = 0, unidade = 'un') {
-  const existente = itensCarrinho.find(item => item.nome === nome && item.unidade === unidade);
-  if (existente) existente.quantidade += 1;
-  else itensCarrinho.push({ nome, preco: Number(preco) || 0, unidade, quantidade: 1 });
-  atualizarCarrinho();
-  abrirCarrinho();
-}
-
-function adicionarComSabor(nome, preco = 0, unidade = 'un', idSelect) {
-  const select = document.getElementById(idSelect);
-  const sabor = select ? select.value : '';
-  const nomeCompleto = sabor ? `${nome} — ${sabor}` : nome;
-  const existente = itensCarrinho.find(item => item.nome === nomeCompleto && item.unidade === unidade);
-  if (existente) existente.quantidade += 1;
-  else itensCarrinho.push({ nome: nomeCompleto, preco: Number(preco) || 0, unidade, quantidade: 1 });
-  atualizarCarrinho();
-  abrirCarrinho();
-}
-
-function alterarQuantidade(indice, delta) {
-  if (!itensCarrinho[indice]) return;
-  itensCarrinho[indice].quantidade += delta;
-  if (itensCarrinho[indice].quantidade <= 0) itensCarrinho.splice(indice, 1);
-  atualizarCarrinho();
+    atualizarCarrinho();
+    abrirCarrinho();
 }
 
 function atualizarCarrinho() {
-  const area = document.getElementById('itens-carrinho');
-  if (!area) return;
-  if (!itensCarrinho.length) {
-    area.innerHTML = '<p>Seu carrinho está vazio.</p>';
-    return;
-  }
-  area.innerHTML = itensCarrinho.map((item, i) => `
-    <div class="item-carrinho" style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin:10px 0;padding:10px;border-bottom:1px solid #555;">
-      <div><strong>${escaparHTML(item.nome)}</strong><br><small>${item.unidade === 'kg' ? 'Por kg — quantidade a confirmar' : 'Unidade'} </small></div>
-      <div style="display:flex;align-items:center;gap:8px;white-space:nowrap;">
-        <button type="button" aria-label="Diminuir quantidade" onclick="alterarQuantidade(${i},-1)">−</button>
-        <strong>${item.quantidade}</strong>
-        <button type="button" aria-label="Aumentar quantidade" onclick="alterarQuantidade(${i},1)">+</button>
-      </div>
-    </div>`).join('');
+    const lista = document.getElementById('listaCarrinho');
+    const contador = document.getElementById('contadorCarrinho');
+
+    lista.innerHTML = '';
+
+    const totalItens = carrinho.reduce(
+        (total, item) => total + item.quantidade, 0
+    );
+
+    contador.textContent = totalItens;
+
+    if (carrinho.length === 0) {
+        lista.innerHTML =
+            '<p class="carrinho-vazio">Sua encomenda está vazia.</p>';
+        return;
+    }
+
+    carrinho.forEach((item, indice) => {
+        const unidadeTexto = item.unidade === 'kg' ? 'kg' : 'un.';
+
+        const elemento = document.createElement('div');
+        elemento.className = 'item-carrinho';
+
+        elemento.innerHTML = `
+            <div>
+                <h4>${item.nome}</h4>
+                <small>Por ${unidadeTexto} — quantidade a confirmar</small>
+                <br>
+                <small>Quantidade: ${item.quantidade} ${unidadeTexto}</small>
+            </div>
+
+            <div class="controles-quantidade">
+                <button type="button"
+                    onclick="alterarQuantidade(${indice}, -1)">−</button>
+
+                <span>${item.quantidade}</span>
+
+                <button type="button" class="mais"
+                    onclick="alterarQuantidade(${indice}, 1)">+</button>
+            </div>
+        `;
+
+        lista.appendChild(elemento);
+    });
 }
 
-function escaparHTML(texto) {
-  return String(texto).replace(/[&<>"']/g, caractere => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[caractere]));
+function alterarQuantidade(indice, alteracao) {
+    if (!carrinho[indice]) return;
+
+    carrinho[indice].quantidade += alteracao;
+
+    if (carrinho[indice].quantidade <= 0) {
+        carrinho.splice(indice, 1);
+    }
+
+    atualizarCarrinho();
 }
 
-function selecionarEntrega(tipo) {
-  tipoEntregaSelecionado = tipo;
-  const select = document.getElementById('tipo-entrega');
-  if (select) select.value = tipo;
-  const uber = document.getElementById('btn-uber');
-  const retirada = document.getElementById('btn-retirada');
-  if (uber) uber.classList.toggle('selecionado', tipo === 'Entrega por Uber');
-  if (retirada) retirada.classList.toggle('selecionado', tipo === 'Retirada na loja');
-  const campo = document.getElementById('campo-endereco');
-  if (campo) campo.style.display = tipo === 'Entrega por Uber' ? 'block' : 'none';
+function abrirCarrinho() {
+    document.getElementById('carrinho').classList.add('aberto');
+    document.getElementById('fundoCarrinho').classList.add('aberto');
+    document.body.classList.add('carrinho-aberto');
 }
 
-function finalizarWhatsApp() {
-  if (!itensCarrinho.length) {
-    alert('Adicione pelo menos um produto à encomenda antes de enviar.');
-    return;
-  }
-  const nome = (document.getElementById('nome-cliente')?.value || '').trim();
-  const telefone = (document.getElementById('telefone-cliente')?.value || '').trim();
-  const endereco = (document.getElementById('endereco-cliente')?.value || '').trim();
-  const observacoes = (document.getElementById('observacoes')?.value || '').trim();
-  const entrega = tipoEntregaSelecionado || document.getElementById('tipo-entrega')?.value || '';
-  if (!nome) { alert('Por favor, informe seu nome.'); document.getElementById('nome-cliente')?.focus(); return; }
-  if (!telefone) { alert('Por favor, informe seu telefone.'); document.getElementById('telefone-cliente')?.focus(); return; }
-  if (!entrega) { alert('Escolha entre entrega por Uber ou retirada na loja.'); return; }
-  if (entrega === 'Entrega por Uber' && !endereco) { alert('Informe o endereço para a entrega por Uber.'); document.getElementById('endereco-cliente')?.focus(); return; }
-  const lista = itensCarrinho.map(item => `• ${item.nome} — ${item.quantidade} ${item.unidade === 'kg' ? 'pedido(s) por kg (peso a confirmar)' : 'unidade(s)'}`).join('\n');
-  const mensagem = `Olá! Quero fazer uma encomenda na Total Carnes.\n\nNome: ${nome}\nTelefone: ${telefone}\nRecebimento: ${entrega}${entrega === 'Entrega por Uber' ? `\nEndereço: ${endereco}\n(Taxa do Uber por conta do cliente)` : ''}\n\nProdutos:\n${lista}${observacoes ? `\n\nObservações: ${observacoes}` : ''}\n\nPagamento: Pix.`;
-  window.open(`https://wa.me/5511953000827?text=${encodeURIComponent(mensagem)}`, '_blank', 'noopener');
+function fecharCarrinho() {
+    document.getElementById('carrinho').classList.remove('aberto');
+    document.getElementById('fundoCarrinho').classList.remove('aberto');
+    document.body.classList.remove('carrinho-aberto');
 }
 
-// Mantém o painel fechado ao carregar e permite abrir pelo botão PEDIDO.
-document.addEventListener('DOMContentLoaded', () => {
-  const carrinho = document.getElementById('carrinho');
-  if (carrinho) carrinho.setAttribute('aria-hidden', 'true');
-  const campo = document.getElementById('campo-endereco');
-  if (campo) campo.style.display = 'none';
-  atualizarCarrinho();
+function enviarPedidoWhatsApp() {
+    if (carrinho.length === 0) {
+        alert('Adicione pelo menos um produto à encomenda.');
+        return;
+    }
+
+    const nome = document.getElementById('nomeCliente').value.trim();
+    const telefone = document.getElementById('telefoneCliente').value.trim();
+    const entrega = document.getElementById('tipoEntrega').value;
+    const endereco = document.getElementById('enderecoCliente').value.trim();
+    const observacoes = document.getElementById('observacoesPedido').value.trim();
+
+    if (!nome || !telefone) {
+        alert('Por favor, preencha seu nome e telefone.');
+        return;
+    }
+
+    if (entrega.startsWith('Entrega') && !endereco) {
+        alert('Informe o endereço para entrega.');
+        return;
+    }
+
+    let mensagem = 'Olá! Quero fazer uma encomenda na Total Carnes.%0A%0A';
+    mensagem += '*DADOS DO CLIENTE*%0A';
+    mensagem += 'Nome: ' + encodeURIComponent(nome) + '%0A';
+    mensagem += 'Telefone: ' + encodeURIComponent(telefone) + '%0A';
+    mensagem += 'Recebimento: ' + encodeURIComponent(entrega) + '%0A';
+
+    if (endereco) {
+        mensagem += 'Endereço: ' + encodeURIComponent(endereco) + '%0A';
+    }
+
+    mensagem += '%0A*PRODUTOS*%0A';
+
+    carrinho.forEach(item => {
+        mensagem += '• ' + encodeURIComponent(item.nome) +
+            ' — ' + item.quantidade + ' ' + encodeURIComponent(item.unidade) +
+            ' (peso/valor a confirmar)%0A';
+    });
+
+    if (observacoes) {
+        mensagem += '%0AObservações: ' + encodeURIComponent(observacoes);
+    }
+
+    mensagem += '%0A%0APagamento: Pix.';
+
+    const numeroLoja = '5511953000827';
+    window.open(
+        'https://wa.me/' + numeroLoja + '?text=' + mensagem,
+        '_blank'
+    );
+}
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') fecharCarrinho();
 });
+
+const menuMobile = document.getElementById('menuMobile');
+const menuNav = document.getElementById('menuNav');
+
+if (menuMobile && menuNav) {
+    menuMobile.addEventListener('click', function() {
+        menuNav.classList.toggle('aberto');
+    });
+}
+
+atualizarCarrinho();
 </script>
+
 </body>
 </html>
