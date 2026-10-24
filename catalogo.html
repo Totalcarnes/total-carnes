@@ -1347,7 +1347,9 @@ function alterarQuantidade(indice, alteracao) {
 
     painel.classList.add('aberto');
     painel.style.right = '0';
-
+    painel.style.display = 'block';
+painel.style.visibility = 'visible';
+painel.style.zIndex = '99999';
     document.body.classList.add('carrinho-aberto');
 
     if (fundo) {
