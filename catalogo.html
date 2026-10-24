@@ -1357,8 +1357,22 @@ painel.style.zIndex = '99999';
     }
 }
 
-function fecharCarrinho() {
-    document.getElementById('carrinho').classList.remove('aberto');
+    function fecharCarrinho() {
+    const painel = document.getElementById('carrinho');
+    const fundo = document.getElementById('fundoCarrinho');
+
+    if (painel) {
+        painel.classList.remove('aberto');
+        painel.style.right = '';
+        painel.style.display = '';
+        painel.style.visibility = '';
+        painel.style.zIndex = '';
+    }
+
+    if (fundo) {
+        fundo.classList.remove('aberto');
+    }
+
     document.body.classList.remove('carrinho-aberto');
 }
 
