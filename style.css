@@ -97,8 +97,8 @@ header {
     transition: transform 0.3s ease;
 }
 .logo .logo-secundaria {
-   widht: 180px;
-      height: 60px;
+   widht: 230px;
+      height: 75px;
    object-fit: contain;
 }
 
