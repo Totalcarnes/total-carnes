@@ -96,6 +96,11 @@ header {
 
     transition: transform 0.3s ease;
 }
+.logo .logo-secundaria {
+   widht: 180px;
+      height: 60px;
+   object-fit: contain;
+}
 
 .logo:hover img {
     transform: scale(1.05);
