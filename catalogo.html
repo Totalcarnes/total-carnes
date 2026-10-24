@@ -1238,12 +1238,6 @@
     resize: vertical;
 }
 
-.aviso-pagamento {
-    color: #ccc;
-    font-size: 13px;
-    line-height: 1.5;
-}
-
 body.carrinho-aberto {
     overflow: hidden;
 }
@@ -1342,9 +1336,21 @@ function alterarQuantidade(indice, alteracao) {
     atualizarCarrinho();
 }
 
-function abrirCarrinho() {
-    document.getElementById('carrinho').classList.add('aberto');
+    function abrirCarrinho() {
+    const carrinhoElemento = document.getElementById('carrinho');
+    const fundo = document.getElementById('fundoCarrinho');
+
+    if (!carrinhoElemento) {
+        console.error('Painel do carrinho não encontrado.');
+        return;
+    }
+
+    carrinhoElemento.classList.add('aberto');
     document.body.classList.add('carrinho-aberto');
+
+    if (fundo) {
+        fundo.classList.add('aberto');
+    }
 }
 
 function fecharCarrinho() {
