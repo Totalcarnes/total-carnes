@@ -1336,16 +1336,18 @@ function alterarQuantidade(indice, alteracao) {
     atualizarCarrinho();
 }
 
-    function abrirCarrinho() {
-    const carrinhoElemento = document.getElementById('carrinho');
+ function abrirCarrinho() {
+    const painel = document.getElementById('carrinho');
     const fundo = document.getElementById('fundoCarrinho');
 
-    if (!carrinhoElemento) {
-        console.error('Painel do carrinho não encontrado.');
+    if (!painel) {
+        alert('Não foi encontrado o painel do carrinho nesta página.');
         return;
     }
 
-    carrinhoElemento.classList.add('aberto');
+    painel.classList.add('aberto');
+    painel.style.right = '0';
+
     document.body.classList.add('carrinho-aberto');
 
     if (fundo) {
