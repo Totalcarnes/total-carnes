@@ -3341,3 +3341,20 @@ button:active,
         height: 50px;
     }
 }
+/* LOGO MENOR NO CELULAR */
+@media screen and (max-width: 850px) {
+    .logo img.logo-secundaria {
+        width: 135px !important;
+        height: 45px !important;
+        max-width: 135px !important;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .logo img.logo-secundaria {
+        width: 115px !important;
+        height: 40px !important;
+        max-width: 115px !important;
+    }
+}
