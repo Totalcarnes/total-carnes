@@ -347,14 +347,11 @@ function mostrarEndereco() {
 function finalizarWhatsApp() {
 
     if (carrinho.length === 0) {
-
         alert(
             "Sua encomenda está vazia. Adicione algum produto antes de enviar."
         );
-
         return;
     }
-
 
     const nomeElemento =
         document.getElementById("nome-cliente");
@@ -364,40 +361,31 @@ function finalizarWhatsApp() {
 
     const tipoEntregaElemento =
         document.getElementById("tipo-entrega");
-   
+
     const observacoesElemento =
         document.getElementById("observacoes");
 
+    const nome = nomeElemento
+        ? nomeElemento.value.trim()
+        : "";
 
-    const nome =
-        nomeElemento
-            ? nomeElemento.value.trim()
-            : "";
+    const telefone = telefoneElemento
+        ? telefoneElemento.value.trim()
+        : "";
 
+    const tipoEntrega = tipoEntregaElemento
+        ? tipoEntregaElemento.value
+        : "";
 
-    const telefone =
-        telefoneElemento
-            ? telefoneElemento.value.trim()
-            : "";
-
-
-    const tipoEntrega =
-        tipoEntregaElemento
-            ? tipoEntregaElemento.value
-            : "";
-
-    const observacoes =
-        observacoesElemento
-            ? observacoesElemento.value.trim()
-            : "";
-
+    const observacoes = observacoesElemento
+        ? observacoesElemento.value.trim()
+        : "";
 
     /* =====================================================
-       VALIDAÇÕES
+       VALIDAR DADOS DO CLIENTE
        ===================================================== */
 
     if (!nome) {
-
         alert("Digite seu nome.");
 
         if (nomeElemento) {
@@ -407,9 +395,7 @@ function finalizarWhatsApp() {
         return;
     }
 
-
     if (!telefone) {
-
         alert("Digite seu telefone.");
 
         if (telefoneElemento) {
@@ -419,42 +405,67 @@ function finalizarWhatsApp() {
         return;
     }
 
-
     if (!tipoEntrega) {
-
-        alert(
-            "Escolha como deseja receber a encomenda."
-        );
-
+        alert("Escolha como deseja receber a encomenda.");
         return;
     }
 
+    /* =====================================================
+       VALIDAR UNIDADE ESCOLHIDA
+       ===================================================== */
+
+    const unidadeSelecionada =
+        document.querySelector(
+            'input[name="unidade-pedido"]:checked'
+        );
+
+    if (!unidadeSelecionada) {
+        alert("Escolha a unidade da Total Carnes para sua encomenda.");
+        return;
+    }
+
+    const unidades = {
+        jundiapeba: {
+            nome: "Jundiapeba",
+            numero: "5511953000827"
+        },
+
+        barao: {
+            nome: "Centro — Barão de Jaceguai",
+            numero: "5511999751892"
+        },
+
+        deodato: {
+            nome: "Centro — Deodato Wertheimer",
+            numero: "5511999753063"
+        }
+    };
+
+    const unidade =
+        unidades[unidadeSelecionada.value];
+
+    if (!unidade) {
+        alert("Não foi possível identificar a unidade escolhida. Selecione novamente.");
+        return;
+    }
+
+    /* =====================================================
+       VALIDAR ENDEREÇO PARA ENTREGA
+       ===================================================== */
 
     let endereco = "";
 
-
-    if (
-        tipoEntrega ===
-        "Entrega por Uber"
-    ) {
+    if (tipoEntrega === "Entrega por Uber") {
 
         const enderecoElemento =
-            document.getElementById(
-                "endereco-cliente"
-            );
+            document.getElementById("endereco-cliente");
 
-
-        endereco =
-            enderecoElemento
-                ? enderecoElemento.value.trim()
-                : "";
-
+        endereco = enderecoElemento
+            ? enderecoElemento.value.trim()
+            : "";
 
         if (!endereco) {
-
-            alert(
-                "Digite o endereço para entrega."
-            );
+            alert("Digite o endereço para entrega.");
 
             if (enderecoElemento) {
                 enderecoElemento.focus();
@@ -462,16 +473,7 @@ function finalizarWhatsApp() {
 
             return;
         }
-
     }
-
-    /* =====================================================
-       WHATSAPP
-       ===================================================== */
-
-    const numero =
-        "5511953000827";
-
 
     /* =====================================================
        MONTAR MENSAGEM
@@ -480,80 +482,56 @@ function finalizarWhatsApp() {
     let mensagem =
         "🥩 *NOVA ENCOMENDA - TOTAL CARNES*\n\n";
 
+    mensagem +=
+        `🏪 *Unidade escolhida:* ${unidade.nome}\n\n`;
 
     mensagem +=
         `👤 *Nome:* ${nome}\n`;
 
-
     mensagem +=
         `📱 *Telefone:* ${telefone}\n\n`;
-
 
     mensagem +=
         `📦 *Forma de recebimento:* ${tipoEntrega}\n`;
 
-
-    if (
-        tipoEntrega ===
-        "Entrega por Uber"
-    ) {
+    if (tipoEntrega === "Entrega por Uber") {
 
         mensagem +=
             `📍 *Endereço:* ${endereco}\n`;
 
         mensagem +=
-            `🛵 *Entrega por Uber — taxa por conta do cliente*\n`;
-
+            "🛵 *Entrega por Uber — taxa por conta do cliente*\n";
     }
 
-   mensagem +="\n";
+    mensagem += "\n";
+    mensagem += "🛒 *ITENS DA ENCOMENDA*\n\n";
 
-    mensagem +=
-        "🛒 *ITENS DA ENCOMENDA*\n\n";
+    carrinho.forEach((produto) => {
 
-
-    carrinho.forEach(
-        (produto) => {
-
-            mensagem +=
-                `• ${produto.nome} — ` +
-                `${produto.quantidade} ` +
-                `${produto.unidade}\n`;
-
-        }
-    );
-
+        mensagem +=
+            `• ${produto.nome} — ` +
+            `${produto.quantidade} ` +
+            `${produto.unidade}\n`;
+    });
 
     if (observacoes) {
-
         mensagem +=
-            `\n📝 *Observações:*\n`;
-
-        mensagem +=
-            `${observacoes}\n`;
-
+            `\n📝 *Observações:*\n${observacoes}\n`;
     }
-
 
     mensagem +=
         "\n❤️ Obrigado! Aguardamos sua confirmação.";
 
-
     /* =====================================================
-       ABRIR WHATSAPP
+       ABRIR WHATSAPP DA UNIDADE ESCOLHIDA
        ===================================================== */
 
     const url =
-        `https://wa.me/${numero}?text=` +
+        `https://wa.me/${unidade.numero}?text=` +
         encodeURIComponent(mensagem);
 
-
-    window.open(
-        url,
-        "_blank"
-    );
+    window.open(url, "_blank");
 }
-
 
 /* =========================================================
    MENU MOBILE
