@@ -1490,26 +1490,31 @@ function finalizarWhatsApp() {
         `- ${item.nome}: ${item.quantidade} ${item.unidade}`
     ).join('\n');
 
-    let mensagem =
-        `*NOVA ENCOMENDA - TOTAL CARNES*\n\n` +
-        `Unidade: ${unidade.nome}\n` +
-        `Nome: ${nome}\n` +
-        `Telefone: ${telefone}\n` +
-        `Recebimento: ${entrega}\n`;
+   let mensagem = "🥩 *NOVA ENCOMENDA - TOTAL CARNES*\n\n";
 
-    if (entrega === 'Entrega por Uber') {
-        mensagem += `Endereço: ${endereco}\n`;
-        mensagem += 'Taxa do Uber por conta do cliente.\n';
-    }
+mensagem += `🏪 *Unidade escolhida:* ${unidade.nome}\n\n`;
 
-    mensagem += `\n*Produtos:*\n${itens}\n`;
+mensagem += `👤 *Nome:* ${nome}\n`;
+mensagem += `📱 *Telefone:* ${telefone}\n\n`;
 
-    if (observacoes) {
-        mensagem += `\nObservações: ${observacoes}\n`;
-    }
+mensagem += `📦 *Forma de recebimento:* ${entrega}\n`;
 
-    mensagem += '\nOs valores e pesos finais serão confirmados pela loja.';
+if (entrega === "Entrega por Uber") {
+    mensagem += `📍 *Endereço:* ${endereco}\n`;
+    mensagem += "🛵 *Entrega por Uber — taxa por conta do cliente*\n";
+}
 
+mensagem += "\n🛒 *ITENS DA ENCOMENDA*\n\n";
+
+carrinho.forEach(function (produto) {
+    mensagem += `• ${produto.nome} — ${produto.quantidade} ${produto.unidade}\n`;
+});
+
+if (observacoes) {
+    mensagem += `\n📝 *Observações:*\n${observacoes}\n`;
+}
+
+mensagem += "\n❤️ Obrigado! Aguardamos sua confirmação.";
     const url =
         `https://wa.me/${unidade.numero}?text=` +
         encodeURIComponent(mensagem);
