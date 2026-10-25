@@ -3001,344 +3001,131 @@ button:active,
         height: 230px;
     }
 }
-/* RODAPÉ COM AS 3 UNIDADES LADO A LADO */
+/* =====================================
+   RODAPÉ — UNIDADES TOTAL CARNES
+===================================== */
 
-.rodape {
-    padding: 30px 15px;
-}
-
-.rodape-colunas {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 0.7fr 1fr 1fr 1fr;
-    gap: 16px;
-    align-items: start;
-}
-
-.rodape-coluna {
-    min-width: 0;
-}
-
-.rodape-coluna h3 {
-    font-size: 14px;
-    line-height: 1.4;
-    margin-bottom: 12px;
-}
-
-.rodape-coluna p {
-    font-size: 11px;
-    line-height: 1.5;
-    margin-bottom: 5px;
-}
-
-.rodape-coluna a {
-    font-size: 11px;
-    margin-bottom: 10px;
-}
-
-.rodape-logo img {
-    width: 135px;
-    max-width: 100%;
-}
-
-/* TABLETS: 2 COLUNAS DE LOJAS */
-
-@media (max-width: 900px) {
-    .rodape-colunas {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 22px;
-    }
-
-    .rodape-logo {
-        grid-column: 1 / -1;
-    }
-}
-
-/* CELULARES */
-
-@media (max-width: 550px) {
-    .rodape-colunas {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px 12px;
-    }
-
-    .rodape-logo {
-        grid-column: 1 / -1;
-    }
-
-    .rodape-coluna h3 {
-        font-size: 13px;
-    }
-
-    .rodape-coluna p {
-        font-size: 11px;
-        overflow-wrap: anywhere;
-    }
-}
-/* AJUSTE FORÇADO DO RODAPÉ TOTAL CARNES */
-
-footer.rodape .rodape-colunas {
-    display: grid !important;
-    grid-template-columns: 150px repeat(3, minmax(0, 1fr)) !important;
-    gap: 12px !important;
-    width: 100% !important;
-    max-width: 1400px !important;
-    margin: 0 auto !important;
-    align-items: start !important;
-}
-
-footer.rodape .rodape-coluna {
-    width: 100% !important;
-    min-width: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    box-sizing: border-box !important;
-}
-
-footer.rodape .rodape-coluna h3 {
-    font-size: 13px !important;
-    line-height: 1.4 !important;
-    overflow-wrap: anywhere;
-}
-
-footer.rodape .rodape-coluna p {
-    font-size: 11px !important;
-    line-height: 1.5 !important;
-    overflow-wrap: anywhere;
-}
-
-footer.rodape .rodape-logo img {
-    width: 130px !important;
-    max-width: 100% !important;
-    height: auto !important;
-}
-
-/* TABLET E CELULAR */
-@media (max-width: 800px) {
-    footer.rodape .rodape-colunas {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    }
-
-    footer.rodape .rodape-logo {
-        grid-column: 1 / -1 !important;
-    }
-}
-
-@media (max-width: 480px) {
-    footer.rodape .rodape-colunas {
-        grid-template-columns: 1fr !important;
-    }
-
-    footer.rodape .rodape-logo {
-        grid-column: auto !important;
-    }
-}
-
-/* =========================================
-   UNIDADES DO CARRINHO — TOTAL CARNES
-   ========================================= */
-
-.opcoes-unidade {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 12px 0 20px;
-}
-
-.unidade-opcao {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px;
-    background: #151515;
-    border: 1px solid #393939;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: border-color 0.25s ease,
-                background 0.25s ease,
-                transform 0.2s ease;
-}
-
-.unidade-opcao:hover {
-    border-color: #e52b23;
-    background: #201414;
-    transform: translateY(-1px);
-}
-
-.unidade-opcao:has(input:checked) {
-    border: 2px solid #e52b23;
-    background: #241313;
-    padding: 13px;
-    box-shadow: 0 0 10px rgba(229, 43, 35, 0.12);
-}
-
-.unidade-opcao input[type="radio"] {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-    accent-color: #e52b23;
-    cursor: pointer;
-}
-
-.unidade-opcao span {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    min-width: 0;
-}
-
-.unidade-opcao strong {
-    color: #ffffff;
-    font-size: 14px;
-    line-height: 1.4;
-}
-
-.unidade-opcao small {
-    color: #bbbbbb;
-    font-size: 12px;
-    line-height: 1.5;
-}
-
-@media (max-width: 480px) {
-    .unidade-opcao {
-        padding: 12px;
-    }
-
-    .unidade-opcao:has(input:checked) {
-        padding: 11px;
-    }
-
-    .unidade-opcao strong {
-        font-size: 13px;
-    }
-
-    .unidade-opcao small {
-        font-size: 11px;
-    }
-}
-
-
-/* =========================================
-   CORREÇÃO DAS UNIDADES NO CELULAR
-   TOTAL CARNES
-   ========================================= */
-
-@media screen and (max-width: 600px) {
-
-    .opcoes-unidade {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 10px !important;
-        width: 100% !important;
-        margin: 12px 0 20px !important;
-    }
-
-    .opcoes-unidade .unidade-opcao {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        gap: 12px !important;
-        width: 100% !important;
-        min-height: 68px !important;
-        padding: 12px !important;
-        box-sizing: border-box !important;
-        background: #151515 !important;
-        border: 1px solid #393939 !important;
-        border-radius: 12px !important;
-        cursor: pointer !important;
-    }
-
-    .opcoes-unidade .unidade-opcao:has(input:checked) {
-        border: 2px solid #e52b23 !important;
-        padding: 11px !important;
-        background: #241313 !important;
-        box-shadow: 0 0 10px rgba(229, 43, 35, 0.18) !important;
-    }
-
-    .opcoes-unidade .unidade-opcao input[type="radio"] {
-        display: block !important;
-        width: 20px !important;
-        height: 20px !important;
-        min-width: 20px !important;
-        margin: 0 !important;
-        flex-shrink: 0 !important;
-        accent-color: #e52b23 !important;
-    }
-
-    .opcoes-unidade .unidade-opcao span {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 5px !important;
-        flex: 1 !important;
-        min-width: 0 !important;
-    }
-
-    .opcoes-unidade .unidade-opcao strong {
-        display: block !important;
-        color: #ffffff !important;
-        font-size: 13px !important;
-        line-height: 1.4 !important;
-    }
-
-    .opcoes-unidade .unidade-opcao small {
-        display: block !important;
-        color: #bbbbbb !important;
-        font-size: 11px !important;
-        line-height: 1.5 !important;
-        white-space: normal !important;
-        overflow-wrap: anywhere !important;
-    }
-}
-/* UNIDADES LADO A LADO NO RODAPÉ */
 .rodape-unidades {
+    grid-column: 1 / -1;
     width: 100%;
     max-width: 100%;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+
+.rodape-unidades > h3 {
+    width: 100%;
+    margin-bottom: 25px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #e52b23;
+    color: #ffffff;
+    font-size: 22px;
 }
 
 .unidades-lado-a-lado {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    gap: 25px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .unidade-rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     min-width: 0;
+    padding: 24px;
+    background: #151515;
+    border: 1px solid #333333;
+    border-top: 3px solid #e52b23;
+    border-radius: 10px;
+    box-sizing: border-box;
     overflow-wrap: anywhere;
 }
 
 .unidade-rodape p {
-    margin: 8px 0;
+    margin: 0 0 12px;
+    color: #cccccc;
+    line-height: 1.7;
+    font-size: 14px;
 }
 
-.unidade-rodape a {
-    display: inline-block;
-    margin-top: 6px;
+.unidade-rodape p strong {
+    color: #ffffff;
+    font-size: 17px;
 }
 
-/* CELULAR */
+.unidade-rodape a:not(.botao-whatsapp-unidade) {
+    color: #e52b23;
+    text-decoration: none;
+    margin: 5px 0 15px;
+}
+
+.unidade-rodape a:not(.botao-whatsapp-unidade):hover {
+    text-decoration: underline;
+}
+
+/* BOTÃO VERMELHO DO WHATSAPP */
+
+.unidade-rodape .botao-whatsapp-unidade {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto;
+    padding: 13px 10px;
+    background: #e52b23;
+    color: #ffffff !important;
+    border: 1px solid #e52b23;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.unidade-rodape .botao-whatsapp-unidade:hover {
+    background: #bd201a;
+    border-color: #bd201a;
+    transform: translateY(-2px);
+}
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+    .unidades-lado-a-lado {
+        gap: 15px;
+    }
+
+    .unidade-rodape {
+        padding: 17px;
+    }
+}
+
+/* CELULARES */
+
 @media (max-width: 700px) {
+    .rodape-unidades {
+        margin-top: 25px;
+    }
+
     .unidades-lado-a-lado {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-}/* BOTÕES DE WHATSAPP DAS UNIDADES */
-.botao-whatsapp-unidade {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 10px 14px;
-    background: #25D366;
-    color: #ffffff !important;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 13px;
-    text-align: center;
-    border-radius: 6px;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
 
-.botao-whatsapp-unidade:hover {
-    background: #1da851;
-    transform: translateY(-2px);
+    .unidade-rodape {
+        padding: 22px;
+    }
+
+    .unidade-rodape p {
+        font-size: 14px;
+    }
+
+    .unidade-rodape .botao-whatsapp-unidade {
+        padding: 14px;
+        font-size: 15px;
+    }
 }
