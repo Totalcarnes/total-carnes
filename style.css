@@ -3129,3 +3129,140 @@ button:active,
         font-size: 15px;
     }
 }
+/* =====================================
+   CONTATO - TRÊS UNIDADES
+===================================== */
+
+.unidades-contato {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    margin: 40px auto;
+    align-items: stretch;
+}
+
+.unidade-contato {
+    min-width: 0;
+    padding: 22px;
+    background: #151515;
+    border: 1px solid #303030;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.unidade-contato h2 {
+    color: #e52b23;
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.unidade-contato p {
+    line-height: 1.7;
+    margin: 0;
+}
+
+.mapa-unidade {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #222;
+}
+
+.mapa-unidade iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.horario-unidade {
+    font-size: 14px;
+}
+
+.horario-unidade strong {
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.unidade-contato .botao-mapa,
+.unidade-contato .botao-whatsapp-unidade {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 10px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+.unidade-contato .botao-mapa {
+    background: #e52b23;
+    color: #fff;
+}
+
+.unidade-contato .botao-whatsapp-unidade {
+    background: #202020;
+    color: #fff;
+    border: 1px solid #3b3b3b;
+}
+
+.unidade-contato .botao-mapa:hover,
+.unidade-contato .botao-whatsapp-unidade:hover {
+    opacity: 0.85;
+}
+
+/* Rodapé com logo e três unidades */
+.rodape-colunas {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px;
+    align-items: start;
+}
+
+.rodape-coluna {
+    min-width: 0;
+}
+
+.rodape-coluna a {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Tablets */
+@media (max-width: 1000px) {
+    .unidades-contato {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .rodape-colunas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .unidades-contato {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .mapa-unidade {
+        height: 250px;
+    }
+
+    .rodape-colunas {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .unidade-contato {
+        padding: 18px;
+    }
+}
