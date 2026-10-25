@@ -3001,3 +3001,78 @@ button:active,
         height: 230px;
     }
 }
+/* RODAPÉ COM AS 3 UNIDADES LADO A LADO */
+
+.rodape {
+    padding: 30px 15px;
+}
+
+.rodape-colunas {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.7fr 1fr 1fr 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.rodape-coluna {
+    min-width: 0;
+}
+
+.rodape-coluna h3 {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.rodape-coluna p {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+.rodape-coluna a {
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+
+.rodape-logo img {
+    width: 135px;
+    max-width: 100%;
+}
+
+/* TABLETS: 2 COLUNAS DE LOJAS */
+
+@media (max-width: 900px) {
+    .rodape-colunas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .rodape-logo {
+        grid-column: 1 / -1;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 550px) {
+    .rodape-colunas {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 12px;
+    }
+
+    .rodape-logo {
+        grid-column: 1 / -1;
+    }
+
+    .rodape-coluna h3 {
+        font-size: 13px;
+    }
+
+    .rodape-coluna p {
+        font-size: 11px;
+        overflow-wrap: anywhere;
+    }
+}
