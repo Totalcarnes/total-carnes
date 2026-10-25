@@ -1440,6 +1440,37 @@ function finalizarWhatsApp() {
         return;
     }
 
+    const unidadeSelecionada = document.querySelector(
+        'input[name="unidade-pedido"]:checked'
+    );
+
+    if (!unidadeSelecionada) {
+        alert('Escolha a unidade onde deseja fazer sua encomenda.');
+        return;
+    }
+
+    const unidades = {
+        jundiapeba: {
+            nome: 'Jundiapeba',
+            numero: '5511953000827'
+        },
+        barao: {
+            nome: 'Centro — Barão de Jaceguai',
+            numero: '5511999751892'
+        },
+        deodato: {
+            nome: 'Centro — Deodato Wertheimer',
+            numero: '5511999753063'
+        }
+    };
+
+    const unidade = unidades[unidadeSelecionada.value];
+
+    if (!unidade) {
+        alert('Unidade inválida. Selecione novamente.');
+        return;
+    }
+
     if (!nome || !telefone) {
         alert('Preencha seu nome e telefone.');
         return;
@@ -1461,13 +1492,14 @@ function finalizarWhatsApp() {
 
     let mensagem =
         `*NOVA ENCOMENDA - TOTAL CARNES*\n\n` +
+        `Unidade: ${unidade.nome}\n` +
         `Nome: ${nome}\n` +
         `Telefone: ${telefone}\n` +
         `Recebimento: ${entrega}\n`;
 
     if (entrega === 'Entrega por Uber') {
         mensagem += `Endereço: ${endereco}\n`;
-        mensagem += `Taxa do Uber por conta do cliente.\n`;
+        mensagem += 'Taxa do Uber por conta do cliente.\n';
     }
 
     mensagem += `\n*Produtos:*\n${itens}\n`;
@@ -1476,29 +1508,14 @@ function finalizarWhatsApp() {
         mensagem += `\nObservações: ${observacoes}\n`;
     }
 
-    mensagem +=
-        '\nOs valores e pesos finais serão confirmados pela loja.';
+    mensagem += '\nOs valores e pesos finais serão confirmados pela loja.';
 
     const url =
-        'https://wa.me/5511953000827?text=' +
+        `https://wa.me/${unidade.numero}?text=` +
         encodeURIComponent(mensagem);
 
     window.open(url, '_blank');
 }
-
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') fecharCarrinho();
-});
-
-const menuMobile = document.getElementById('menuMobile');
-const menuNav = document.getElementById('menuNav');
-
-if (menuMobile && menuNav) {
-    menuMobile.addEventListener('click', function() {
-        menuNav.classList.toggle('aberto');
-    });
-}
-
 atualizarCarrinho();
 </script>
 
