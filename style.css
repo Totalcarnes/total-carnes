@@ -3266,3 +3266,61 @@ button:active,
         padding: 18px;
     }
 }
+/* RESTAURAR AS CAIXINHAS DE ESCOLHA DA UNIDADE */
+
+.opcoes-unidade {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0 16px;
+}
+
+.unidade-opcao {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 14px;
+    background: #202020;
+    border: 1px solid #454545;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.unidade-opcao:hover {
+    border-color: #e52b23;
+    background: #292020;
+}
+
+.unidade-opcao:has(input:checked) {
+    border-color: #e52b23;
+    background: rgba(229, 43, 35, 0.12);
+}
+
+.unidade-opcao input[type="radio"] {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #e52b23;
+    cursor: pointer;
+}
+
+.unidade-opcao span {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.unidade-opcao strong {
+    color: #fff;
+    font-size: 14px;
+}
+
+.unidade-opcao small {
+    color: #aaa;
+    font-size: 12px;
+    line-height: 1.5;
+}
