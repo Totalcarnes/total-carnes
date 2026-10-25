@@ -2842,14 +2842,15 @@ button:active,
 .finalizar:active {
     transform: scale(0.97);
 }
-/* ================================
-   NOSSAS UNIDADES - TOTAL CARNES
-================================ */
+/* ======================================
+   UNIDADES - PADRÃO VISUAL TOTAL CARNES
+====================================== */
 
 .unidades-section {
     background: #090909;
-    padding: 70px 20px;
-    color: #fff;
+    color: inherit;
+    padding: 60px 20px;
+    font-family: inherit;
     scroll-margin-top: 90px;
 }
 
@@ -2860,74 +2861,83 @@ button:active,
 
 .unidades-titulo {
     color: #e52b23;
-    font-size: 32px;
-    text-align: center;
+    font-family: inherit;
+    font-size: 30px;
     font-weight: 800;
+    text-align: center;
     margin: 0 0 12px;
 }
 
 .unidades-subtitulo {
     color: #ccc;
+    font-family: inherit;
+    font-size: inherit;
     text-align: center;
-    font-size: 16px;
-    margin: 0 0 38px;
     line-height: 1.6;
+    margin: 0 0 35px;
 }
+
+/* TRÊS LOJAS LADO A LADO */
 
 .unidades-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    gap: 20px;
     align-items: stretch;
 }
 
 .unidade-card {
     background: #151515;
-    border: 1px solid #333;
-    border-radius: 12px;
+    border: 1px solid #292929;
+    border-radius: 10px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     min-width: 0;
-    transition: border-color 0.3s ease,
-                transform 0.3s ease;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
 }
 
 .unidade-card:hover {
     border-color: #e52b23;
-    transform: translateY(-4px);
 }
 
 .unidade-info {
-    padding: 24px 20px 18px;
+    padding: 20px 18px;
 }
 
 .unidade-numero {
-    display: inline-block;
+    display: block;
     color: #e52b23;
+    font-family: inherit;
     font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
+    font-weight: bold;
+    letter-spacing: 1px;
     margin-bottom: 10px;
 }
 
 .unidade-info h3 {
     color: #fff;
-    font-size: 19px;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
     line-height: 1.4;
-    margin: 0 0 14px;
+    margin: 0 0 12px;
 }
 
 .unidade-endereco {
     color: #ccc;
+    font-family: inherit;
     font-size: 14px;
-    line-height: 1.8;
+    line-height: 1.7;
     margin: 0;
 }
 
+/* MAPAS COM A MESMA LARGURA DOS CARTÕES */
+
 .unidade-mapa {
     width: 100%;
-    height: 230px;
+    height: 220px;
     background: #222;
     margin-top: auto;
 }
@@ -2939,16 +2949,19 @@ button:active,
     border: 0;
 }
 
+/* BOTÃO VERMELHO DO SITE */
+
 .unidade-botao {
     display: block;
     background: #e52b23;
     color: #fff;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: bold;
     text-align: center;
     text-decoration: none;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.4px;
-    padding: 16px 10px;
+    padding: 15px 8px;
+    line-height: 1.5;
     transition: background 0.3s ease;
 }
 
@@ -2956,52 +2969,35 @@ button:active,
     background: #bd201a;
 }
 
-/* TABLETS */
+/* TABLET */
+
 @media (max-width: 900px) {
     .unidades-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-    }
-
-    .unidade-card:last-child {
-        grid-column: 1 / -1;
-    }
-
-    .unidade-card:last-child .unidade-mapa {
-        height: 260px;
-    }
-}
-
-/* CELULARES */
-@media (max-width: 600px) {
-    .unidades-section {
-        padding: 45px 15px;
-    }
-
-    .unidades-titulo {
-        font-size: 26px;
-    }
-
-    .unidades-subtitulo {
-        font-size: 14px;
-        margin-bottom: 28px;
-    }
-
-    .unidades-grid {
-        grid-template-columns: 1fr;
-        gap: 22px;
     }
 
     .unidade-card:last-child {
         grid-column: auto;
     }
+}
 
-    .unidade-mapa,
-    .unidade-card:last-child .unidade-mapa {
-        height: 230px;
+/* CELULAR */
+
+@media (max-width: 600px) {
+    .unidades-section {
+        padding: 40px 15px;
     }
 
-    .unidade-info {
-        padding: 22px 18px 16px;
+    .unidades-titulo {
+        font-size: 25px;
+    }
+
+    .unidades-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .unidade-mapa {
+        height: 230px;
     }
 }
