@@ -2842,3 +2842,166 @@ button:active,
 .finalizar:active {
     transform: scale(0.97);
 }
+/* ================================
+   NOSSAS UNIDADES - TOTAL CARNES
+================================ */
+
+.unidades-section {
+    background: #090909;
+    padding: 70px 20px;
+    color: #fff;
+    scroll-margin-top: 90px;
+}
+
+.unidades-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.unidades-titulo {
+    color: #e52b23;
+    font-size: 32px;
+    text-align: center;
+    font-weight: 800;
+    margin: 0 0 12px;
+}
+
+.unidades-subtitulo {
+    color: #ccc;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 0 38px;
+    line-height: 1.6;
+}
+
+.unidades-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.unidade-card {
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    transition: border-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.unidade-card:hover {
+    border-color: #e52b23;
+    transform: translateY(-4px);
+}
+
+.unidade-info {
+    padding: 24px 20px 18px;
+}
+
+.unidade-numero {
+    display: inline-block;
+    color: #e52b23;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.unidade-info h3 {
+    color: #fff;
+    font-size: 19px;
+    line-height: 1.4;
+    margin: 0 0 14px;
+}
+
+.unidade-endereco {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.unidade-mapa {
+    width: 100%;
+    height: 230px;
+    background: #222;
+    margin-top: auto;
+}
+
+.unidade-mapa iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.unidade-botao {
+    display: block;
+    background: #e52b23;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    padding: 16px 10px;
+    transition: background 0.3s ease;
+}
+
+.unidade-botao:hover {
+    background: #bd201a;
+}
+
+/* TABLETS */
+@media (max-width: 900px) {
+    .unidades-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .unidade-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .unidade-card:last-child .unidade-mapa {
+        height: 260px;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+    .unidades-section {
+        padding: 45px 15px;
+    }
+
+    .unidades-titulo {
+        font-size: 26px;
+    }
+
+    .unidades-subtitulo {
+        font-size: 14px;
+        margin-bottom: 28px;
+    }
+
+    .unidades-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .unidade-card:last-child {
+        grid-column: auto;
+    }
+
+    .unidade-mapa,
+    .unidade-card:last-child .unidade-mapa {
+        height: 230px;
+    }
+
+    .unidade-info {
+        padding: 22px 18px 16px;
+    }
+}
