@@ -3076,3 +3076,61 @@ button:active,
         overflow-wrap: anywhere;
     }
 }
+/* AJUSTE FORÇADO DO RODAPÉ TOTAL CARNES */
+
+footer.rodape .rodape-colunas {
+    display: grid !important;
+    grid-template-columns: 150px repeat(3, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    align-items: start !important;
+}
+
+footer.rodape .rodape-coluna {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+footer.rodape .rodape-coluna h3 {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    overflow-wrap: anywhere;
+}
+
+footer.rodape .rodape-coluna p {
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+    overflow-wrap: anywhere;
+}
+
+footer.rodape .rodape-logo img {
+    width: 130px !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* TABLET E CELULAR */
+@media (max-width: 800px) {
+    footer.rodape .rodape-colunas {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    footer.rodape .rodape-logo {
+        grid-column: 1 / -1 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    footer.rodape .rodape-colunas {
+        grid-template-columns: 1fr !important;
+    }
+
+    footer.rodape .rodape-logo {
+        grid-column: auto !important;
+    }
+}
