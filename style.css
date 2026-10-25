@@ -3290,3 +3290,55 @@ footer.rodape .rodape-logo img {
         overflow-wrap: anywhere !important;
     }
 }
+/* UNIDADES LADO A LADO NO RODAPÉ */
+.rodape-unidades {
+    width: 100%;
+    max-width: 100%;
+}
+
+.unidades-lado-a-lado {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+.unidade-rodape {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.unidade-rodape p {
+    margin: 8px 0;
+}
+
+.unidade-rodape a {
+    display: inline-block;
+    margin-top: 6px;
+}
+
+/* CELULAR */
+@media (max-width: 700px) {
+    .unidades-lado-a-lado {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}/* BOTÕES DE WHATSAPP DAS UNIDADES */
+.botao-whatsapp-unidade {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #25D366;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.botao-whatsapp-unidade:hover {
+    background: #1da851;
+    transform: translateY(-2px);
+}
